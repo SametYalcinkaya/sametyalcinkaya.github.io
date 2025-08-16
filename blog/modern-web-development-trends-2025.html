@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2025 yılında öne çıkan web development teknolojileri, React Server Components, WebAssembly, AI entegrasyonu ve daha fazlası">
+    <meta name="keywords" content="web development, 2025, React, WebAssembly, AI, trends, teknoloji">
+    <meta name="author" content="Hıdır Samet YALÇINKAYA">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="2025 Yılında Modern Web Development Trendleri">
+    <meta property="og:description" content="Web development alanında 2025 yılında öne çıkan teknolojiler ve trendler">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sametyalcinkaya.github.io/blog/modern-web-development-trends-2025.html">
+    <meta property="og:image" content="https://sametyalcinkaya.github.io/assets/images/blog/featured-post.jpg">
+    <meta property="article:author" content="Hıdır Samet YALÇINKAYA">
+    <meta property="article:published_time" content="2025-08-15T00:00:00Z">
+    <meta property="article:modified_time" content="2025-08-15T00:00:00Z">
+    <meta property="article:section" content="Teknik">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="React">
+    <meta property="article:tag" content="WebAssembly">
+    
+    <title>2025 Yılında Modern Web Development Trendleri - Hıdır Samet YALÇINKAYA</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Highlight.js for code highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">HSY</a>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../about.html" class="nav-link">Hakkımda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../projects.html" class="nav-link">Projelerim</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../research.html" class="nav-link">Araştırmalarım</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../notes.html" class="nav-link">Ders Notlarım</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../contact.html" class="nav-link">İletişim</a>
+                </li>
+            </ul>
+            
+            <div class="nav-controls">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="tr">TR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <article class="blog-article">
+        <header class="article-header">
+            <div class="container">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <a href="../index.html">Ana Sayfa</a>
+                    <span class="separator">/</span>
+                    <a href="../blog.html">Blog</a>
+                    <span class="separator">/</span>
+                    <span class="current">2025 Web Development Trendleri</span>
+                </nav>
+                
+                <div class="article-meta">
+                    <span class="category">Teknik</span>
+                    <time class="publish-date" datetime="2025-08-15">15 Ağustos 2025</time>
+                    <span class="read-time">8 dk okuma</span>
+                    <span class="view-count">1,250 görüntüleme</span>
+                </div>
+                
+                <h1 class="article-title">2025 Yılında Modern Web Development Trendleri</h1>
+                
+                <p class="article-excerpt">
+                    Web development alanında 2025 yılında öne çıkan teknolojiler, framework'ler ve 
+                    metodolojiler üzerine detaylı bir inceleme. React Server Components'tan WebAssembly'ye, 
+                    AI entegrasyonundan edge computing'e kadar birçok konuyu ele alıyorum.
+                </p>
+                
+                <div class="author-info">
+                    <img src="../assets/images/profile.jpg" alt="Hıdır Samet YALÇINKAYA" class="author-avatar">
+                    <div class="author-details">
+                        <div class="author-name">Hıdır Samet YALÇINKAYA</div>
+                        <div class="author-title">Mühendis & Araştırmacı</div>
+                    </div>
+                    <div class="article-actions">
+                        <button class="action-btn" id="like-btn" title="Beğen">
+                            <i class="far fa-heart"></i>
+                            <span>89</span>
+                        </button>
+                        <button class="action-btn" id="share-btn" title="Paylaş">
+                            <i class="fas fa-share"></i>
+                        </button>
+                        <button class="action-btn" id="bookmark-btn" title="Kaydet">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="article-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">React</span>
+                    <span class="tag">WebAssembly</span>
+                    <span class="tag">AI</span>
+                    <span class="tag">Edge Computing</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="article-featured-image">
+            <img src="../assets/images/blog/featured-post.jpg" alt="Modern Web Development 2025">
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-content">
+            <div class="container">
+                <div class="content-wrapper">
+                    <!-- Table of Contents -->
+                    <aside class="table-of-contents">
+                        <h3>İçindekiler</h3>
+                        <nav class="toc-nav">
+                            <ul>
+                                <li><a href="#react-server-components">React Server Components</a></li>
+                                <li><a href="#webassembly-evolution">WebAssembly'nin Evrimi</a></li>
+                                <li><a href="#ai-integration">AI Entegrasyonu</a></li>
+                                <li><a href="#edge-computing">Edge Computing</a></li>
+                                <li><a href="#performance-optimization">Performans Optimizasyonu</a></li>
+                                <li><a href="#developer-experience">Developer Experience</a></li>
+                                <li><a href="#conclusion">Sonuç</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+
+                    <!-- Main Content -->
+                    <main class="main-content">
+                        <div class="content-body">
+                            <p class="lead">
+                                2025 yılı web development dünyası için heyecan verici gelişmelerin yaşandığı bir dönem. 
+                                Bu yazıda, yılın öne çıkan teknolojilerini ve trendlerini detaylıca inceleyeceğim.
+                            </p>
+
+                            <h2 id="react-server-components">React Server Components: Yeni Paradigma</h2>
+                            
+                            <p>
+                                React Server Components, web uygulamalarının nasıl yapılandırıldığını kökten değiştiren 
+                                bir teknoloji. Bu yenilik, server-side rendering ile client-side interactivity 
+                                arasındaki sınırları bulanıklaştırıyor.
+                            </p>
+
+                            <blockquote>
+                                "Server Components, React'ın geleceğini şekillendiren en önemli yenilik" 
+                                - Dan Abramov, React Core Team
+                            </blockquote>
+
+                            <h3>Ana Avantajları</h3>
+                            <ul>
+                                <li>Daha hızlı initial page load süreleri</li>
+                                <li>Daha küçük bundle boyutları</li>
+                                <li>Server-side data fetching optimizasyonları</li>
+                                <li>SEO dostu yapı</li>
+                            </ul>
+
+                            <p>Basit bir Server Component örneği:</p>
+
+                            <pre><code class="language-jsx">
+// ProductList.server.js
+import { db } from './db';
+
+export default async function ProductList() {
+  const products = await db.products.findMany();
+  
+  return (
+    &lt;div className="product-grid"&gt;
+      {products.map(product =&gt; (
+        &lt;ProductCard key={product.id} product={product} /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+                            </code></pre>
+
+                            <h2 id="webassembly-evolution">WebAssembly'nin Evrimi</h2>
+
+                            <p>
+                                WebAssembly (WASM) artık sadece performans kritik uygulamalar için değil, 
+                                genel web development'ta da aktif olarak kullanılıyor. 2025'te özellikle 
+                                bu alanlarda büyük gelişmeler yaşandı:
+                            </p>
+
+                            <div class="info-box">
+                                <h4>2025'te WebAssembly Gelişmeleri</h4>
+                                <ul>
+                                    <li>WASI (WebAssembly System Interface) standardizasyonu</li>
+                                    <li>Garbage Collection desteği</li>
+                                    <li>Threading ve multi-core support</li>
+                                    <li>Daha iyi debugging toolları</li>
+                                </ul>
+                            </div>
+
+                            <h2 id="ai-integration">AI Entegrasyonu: Web'in Yeni Boyutu</h2>
+
+                            <p>
+                                Yapay zeka, web uygulamalarının ayrılmaz bir parçası haline geldi. 
+                                2025'te bu entegrasyon şu şekillerde kendini gösteriyor:
+                            </p>
+
+                            <h3>Client-Side AI Models</h3>
+                            <p>
+                                TensorFlow.js ve ONNX.js gibi kütüphaneler sayesinde, karmaşık AI modelleri 
+                                artık doğrudan tarayıcıda çalışabiliyor.
+                            </p>
+
+                            <pre><code class="language-javascript">
+// AI-powered search suggestion
+import * as tf from '@tensorflow/tfjs';
+
+class SmartSearch {
+  async loadModel() {
+    this.model = await tf.loadLayersModel('/models/search-model.json');
+  }
+  
+  async getSuggestions(query) {
+    const processed = this.preprocessQuery(query);
+    const predictions = this.model.predict(processed);
+    return this.formatSuggestions(predictions);
+  }
+}
+                            </code></pre>
+
+                            <h2 id="edge-computing">Edge Computing: Hız ve Güvenilirlik</h2>
+
+                            <p>
+                                Edge computing, uygulamaların kullanıcıya daha yakın sunucularda çalıştırılması 
+                                anlamına geliyor. Bu yaklaşım, hem performans hem de kullanıcı deneyimi açısından 
+                                devrim niteliğinde.
+                            </p>
+
+                            <div class="comparison-table">
+                                <h4>Geleneksel vs Edge Computing</h4>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Özellik</th>
+                                            <th>Geleneksel</th>
+                                            <th>Edge Computing</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Latency</td>
+                                            <td>100-300ms</td>
+                                            <td>10-50ms</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Güvenilirlik</td>
+                                            <td>Orta</td>
+                                            <td>Yüksek</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ölçeklenebilirlik</td>
+                                            <td>Merkezi</td>
+                                            <td>Dağıtık</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2 id="performance-optimization">Performans Optimizasyonu: Core Web Vitals 2.0</h2>
+
+                            <p>
+                                Google'ın Core Web Vitals metrikleri, 2025'te güncellenecek ve yeni 
+                                performans standartları belirlenecek. Bu değişiklikler, web sitelerinin 
+                                nasıl optimize edildiğini etkileyecek.
+                            </p>
+
+                            <div class="warning-box">
+                                <h4>⚠️ Dikkat!</h4>
+                                <p>
+                                    Yeni Core Web Vitals metrikleri Mart 2025'te devreye girecek. 
+                                    Web sitelerinizi şimdiden optimize etmeye başlamalısınız.
+                                </p>
+                            </div>
+
+                            <h2 id="developer-experience">Developer Experience: Araçların Evrimi</h2>
+
+                            <p>
+                                Geliştirici deneyimi, 2025'te büyük bir odak noktası. Yeni araçlar ve 
+                                framework'ler, development sürecini daha verimli hale getiriyor.
+                            </p>
+
+                            <h3>Öne Çıkan Araçlar</h3>
+                            <ol>
+                                <li><strong>Vite 5.0:</strong> Ultra-fast build tool</li>
+                                <li><strong>Turbopack:</strong> Webpack'in halefi</li>
+                                <li><strong>Bun:</strong> All-in-one JavaScript runtime</li>
+                                <li><strong>Deno 2.0:</strong> Secure-by-default runtime</li>
+                            </ol>
+
+                            <h2 id="conclusion">Sonuç ve Gelecek Öngörüleri</h2>
+
+                            <p>
+                                2025 yılı web development için transformatif bir yıl oldu. Server Components, 
+                                WebAssembly, AI entegrasyonu ve edge computing gibi teknolojiler, web'in 
+                                geleceğini şekillendiriyor.
+                            </p>
+
+                            <p>
+                                Gelecek dönem için tahminlerim:
+                            </p>
+
+                            <ul>
+                                <li>WebAssembly'nin mainstream adoption'ı</li>
+                                <li>AI-first development yaklaşımları</li>
+                                <li>Edge computing'in yaygınlaşması</li>
+                                <li>Developer tooling'de devrimsel gelişmeler</li>
+                            </ul>
+
+                            <div class="conclusion-cta">
+                                <p>
+                                    Bu konularda ne düşünüyorsunuz? Görüşlerinizi 
+                                    <a href="../contact.html">benimle paylaşın</a> veya 
+                                    sosyal medyadan takip edin!
+                                </p>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+
+        <!-- Article Footer -->
+        <footer class="article-footer">
+            <div class="container">
+                <div class="article-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-eye"></i>
+                        <span>1,250 görüntüleme</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-heart"></i>
+                        <span id="like-count">89 beğeni</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-comment"></i>
+                        <span>12 yorum</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-share"></i>
+                        <span>25 paylaşım</span>
+                    </div>
+                </div>
+
+                <div class="article-social-share">
+                    <h3>Bu yazıyı paylaşın</h3>
+                    <div class="social-buttons">
+                        <a href="#" class="social-btn twitter" onclick="shareOnTwitter()">
+                            <i class="fab fa-twitter"></i>
+                            Twitter
+                        </a>
+                        <a href="#" class="social-btn linkedin" onclick="shareOnLinkedIn()">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                        <a href="#" class="social-btn facebook" onclick="shareOnFacebook()">
+                            <i class="fab fa-facebook"></i>
+                            Facebook
+                        </a>
+                        <a href="#" class="social-btn copy-link" onclick="copyLink()">
+                            <i class="fas fa-link"></i>
+                            Link Kopyala
+                        </a>
+                    </div>
+                </div>
+
+                <div class="author-bio">
+                    <img src="../assets/images/profile.jpg" alt="Hıdır Samet YALÇINKAYA" class="author-photo">
+                    <div class="bio-content">
+                        <h3>Hıdır Samet YALÇINKAYA</h3>
+                        <p>
+                            Mühendis ve araştırmacı olarak teknolojinin gelişimine katkıda bulunmaya 
+                            çalışıyorum. Web development, AI ve sistem tasarımı alanlarında deneyimliyim. 
+                            Bu blogda teknik deneyimlerimi ve öğrendiklerimi paylaşıyorum.
+                        </p>
+                        <div class="author-social">
+                            <a href="https://linkedin.com/in/sametyalcinkaya" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/sametyalcinkaya" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://twitter.com/sametyalcinkaya" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </article>
+
+    <!-- Related Posts -->
+    <section class="related-posts">
+        <div class="container">
+            <h2>İlgili Yazılar</h2>
+            <div class="related-grid">
+                <article class="related-post">
+                    <img src="../assets/images/blog/post-1.jpg" alt="Problem Çözme">
+                    <div class="related-content">
+                        <span class="related-category">Teknik</span>
+                        <h3><a href="engineering-problem-solving-methodology.html">Mühendislik Problem Çözme Metodolojim</a></h3>
+                        <time>10 Ağustos 2025</time>
+                    </div>
+                </article>
+
+                <article class="related-post">
+                    <img src="../assets/images/blog/post-5.jpg" alt="Edge Computing">
+                    <div class="related-content">
+                        <span class="related-category">Teknoloji Trendi</span>
+                        <h3><a href="edge-computing-revolution.html">Edge Computing: Yeni Dönemin Mimarisi</a></h3>
+                        <time>25 Temmuz 2025</time>
+                    </div>
+                </article>
+
+                <article class="related-post">
+                    <img src="../assets/images/blog/post-3.jpg" alt="AI Future">
+                    <div class="related-content">
+                        <span class="related-category">Araştırma</span>
+                        <h3><a href="ai-machine-learning-future-trends.html">AI ve Machine Learning'in Gelecek 5 Yılı</a></h3>
+                        <time>1 Ağustos 2025</time>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Hıdır Samet YALÇINKAYA</h3>
+                        <p>Mühendis & Araştırmacı</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://linkedin.com/in/sametyalcinkaya" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/sametyalcinkaya" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:samet@example.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://twitter.com/sametyalcinkaya" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Blog Kategorileri</h4>
+                    <ul class="footer-links">
+                        <li><a href="../blog.html?category=teknik">Teknik</a></li>
+                        <li><a href="../blog.html?category=kariyer">Kariyer</a></li>
+                        <li><a href="../blog.html?category=arastirma">Araştırma</a></li>
+                        <li><a href="../blog.html?category=kisisel">Kişisel</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">Hakkımda</a></li>
+                        <li><a href="../projects.html">Projelerim</a></li>
+                        <li><a href="../contact.html">İletişim</a></li>
+                        <li><a href="../assets/cv/HSY_CV_TR.pdf" target="_blank">CV İndir</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> samet@example.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Türkiye</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hıdır Samet YALÇINKAYA. Tüm hakları saklıdır.</p>
+                <div class="footer-bottom-links">
+                    <a href="../privacy.html">Gizlilik Politikası</a>
+                    <a href="../terms.html">Kullanım Koşulları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/blog-post.js"></script>
+    
+    <!-- Initialize Highlight.js -->
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
