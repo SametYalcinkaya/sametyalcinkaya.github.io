@@ -1,0 +1,28 @@
+<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="75" cy="75" r="75" fill="#0a0a0a" stroke="#00FF00" stroke-width="2"/>
+  
+  <!-- Inner Glow -->
+  <circle cx="75" cy="75" r="70" fill="none" stroke="#00FF00" stroke-width="1" opacity="0.3">
+    <animate attributeName="r" values="70;72;70" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- User Icon -->
+  <g fill="#00FF00" stroke="#00FFFF" stroke-width="1">
+    <!-- Head -->
+    <circle cx="75" cy="55" r="18"/>
+    <!-- Body -->
+    <path d="M55 85 Q55 75 75 75 Q95 75 95 85 L95 105 Q95 115 75 115 Q55 115 55 105 Z"/>
+  </g>
+  
+  <!-- Terminal-style decoration -->
+  <g font-family="monospace" font-size="6" fill="#00FFFF" opacity="0.6">
+    <text x="20" y="20">&gt;_</text>
+    <text x="125" y="20">01</text>
+    <text x="20" y="130">$</text>
+    <text x="125" y="130">_</text>
+  </g>
+  
+  <!-- Shield overlay -->
+  <path d="M75 25 L85 25 L85 30 L80 35 L75 30 Z" fill="#00FFFF" opacity="0.8"/>
+</svg>

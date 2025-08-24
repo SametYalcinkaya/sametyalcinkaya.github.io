@@ -1,0 +1,56 @@
+Siber Savaş “GÖRÜNMEYEN CEPHELERİN GÜCÜ”
+
+Bir savaş alanı hayal ettiğimizde aklımıza ilk gelenler; tozu dumana katan tanklar, var gücüyle saldıran birlikler, gökyüzünü delen savaş uçakları, bombalar ve silah sesleridir. Ancak artık savaş böyle görünmüyor. Günümüzde bir cephe, dört duvar arasındaki sessiz bir odadan ibaret olabilir. Yeterli ekipman, internet bağlantısı ve yetenekli bir ekiple bir ülkenin elektriğini, suyunu, hatta tüm finansal ve savunma altyapısını çökertmek mümkün. Artık savaş, biçim değiştirdi.
+Stuxnet: Dijital Dünyanın Sessiz Silahı
+“Siber Silahlar ve Modern Casusluk”
+Bu aşamada, tarihin ilk siber silahlarından biri olan Stuxnet’ten bahsetmek gerekir.
+
+10 Kasım 2008’de Barack Obama, seçimleri kazandıktan sonra Beyaz Saray’da dönemin başkanıyla görüştü. Bu görüşmede, yeni başkana Amerika’nın 2005’ten beri İsrail ile ortak geliştirdiği “Project Olympic Games” adlı çok gizli bir projeden söz edildi.
+
+Hedef, İran’ın yer altına gömülü nükleer zenginleştirme tesisiydi. Bu tesiste, uranyum gibi radyoaktif maddeler santrifüjlerle işleniyor, enerji üretiliyor, daha da önemlisi nükleer silah üretme potansiyeli taşıyordu. Ancak bu projede kullanılan silah bir füze, bir uçak ya da roket değildi. Sadece 1 MB’tan küçük bir bilgisayar dosyasıydı. İçerisinde kusursuzca yazılmış 150 bin satırlık bir kod barındırıyordu. Bu bir siber silahtı.
+
+Bu yazılım, hedef sistemlere gizlice bulaşıyor; eğer doğru hedef değilse sessizce bekliyordu. Ta ki bir çalışanın dikkatsizce enfekte bir USB belleği nükleer tesisteki bilgisayara takmasına kadar… O an sistemin içinde uyanan bu yazılım, diğer bilgisayarlara da yayıldı. Santrifüjlerin hızını değiştirerek onları bozdu ama bu sırada sistemde hiçbir hata raporu çıkmıyor, her şey normal görünüyordu. İran’ın milyarlarca dolarlık zarara uğradığı düşünülüyor. Eğer bir savaş çıkmış olsaydı, Amerika İran’ın elektriğini kesebilir, savunma sistemlerini ve komuta kontrol merkezlerini devre dışı bırakabilirdi.
+Zero Day: Sessiz Tehdit
+“Zero Day Pazarının Karanlık Yüzü”
+
+Bu noktada “Zero Day”, yani “Sıfırıncı Gün” kavramını anlamak gerekir. Bu, yazılım üreticisinin henüz farkında olmadığı ve dolayısıyla önlem almak için sıfır günü kaldığı bir güvenlik açığıdır. Bir hacker bu tür bir açığı bulduğunda, onu kullanan sistem sahipleri bunun farkına bile varamaz. Eğer etik bir hacker (beyaz şapkalı) iseniz, bu açığı üretici firmaya bildirerek ödül alabilirsiniz. Apple, bu tür bir açığı bulanlara 1 milyon dolar; Google ise yüz binlerce dolar ödeyebiliyor. Bu süreç, “Bug Bounty” olarak bilinir.
+
+Ancak işin karanlık bir tarafı da vardır. Kara borsada veya bazı örgütlerde, özellikle devlet destekli gruplar, bu bilgilere milyonlarca dolar ödeyebilmektedir. Örneğin, bir Rus hacker, NATO dışı bir ülkeden bir müşterisinin iPhone’lara sızmak için bir açığa 20 milyon dolar teklif ettiğini iddia etmiştir.
+
+
+Bilgi: Yeni Çağın Nükleer Gücü
+Eski bir CIA çalışanının söylediği gibi: Bu olasılıklar bize 1945’i, yani atom bombasının dünyayı nasıl değiştirdiğini hatırlatıyor. Şimdi ise bilgi, sahip olanla olmayan arasındaki farkı radikal şekilde açıyor. İran örneği dışında da saldırılara tanık olduk. Elektrik altyapılarının çökertilmesi, hastanelerin hacklenmesi ve yoğun bakımdaki hastaların ölmesi gibi durumlar yaşandı.
+Bu tehdit, geleceğe ait bir senaryo değil. Birçok ülkenin sistemlerine hâlihazırda sızılmış olabilir. Zararlı yazılımlar, dijital damarlarımızda dolaşıyor ve sadece zamanı geldiğinde aktif olmak üzere bekliyor.
+İnsan Faktörü: En Zayıf Halka
+Tüm bu siber savaş tehditlerinden korunmak için sistemlerimizi mükemmel şekilde güvenli hâle getirsek bile bu yeterli olmaz. Çünkü her sistem, en zayıf halkası kadar güçlüdür. Ve tüm sistemlerin en zayıf halkası, o sistemi kullanan insanlardır. İnsanların siber güvenlik farkındalığı düşük olduğu sürece, sistemlerin en korunaklı olanları bile bir anda savunmasız hâle gelebilir.
+
+“Kodların arasındaki savaş çoktan başladı; peki, biz hangi taraftayız?”
+
+
+Kaynakça
+1- Yenal, S., & Akdemıir, N. (2020). ULUSLARARASI İLİŞKİLERDE YENİ BİR KUVVET ÇARPANI: SİBER SAVAŞLAR ÜZERİNE BİR VAKA ANALİZİ. Çankırı Karatekin Üniversitesi Sosyal Bilimler Enstitüsü Dergisi, 11(1), 414–450.
+
+2- ÇALIŞKAN, Aykut. Siber Savaş: Bilgi Krizi Mi Yoksa Güvenliği Mi?. SAVSAD Savunma ve Savaş Araştırmaları Dergisi, 2023, 33.1: 1–32.
+
+3-https://bebarbilim.net
+
+4- ÇELIK, Şener. STUXNET saldırısı ve ABD’nin siber savaş stratejisi: uluslararası hukukta kuvvet kullanmaktan kaçınma ilkesi çerçevesinde bir değerlendirme. Dokuz Eylül Üniversitesi Hukuk Fakültesi Dergisi, 2013, 15.1: 137–175.
+
+5- ChatGPT OpenAI, 2025
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

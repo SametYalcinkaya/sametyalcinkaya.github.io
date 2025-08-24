@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siber Savaş: Görünmeyen Cephelerin Gücü | Hıdır Samet Yalçınkaya</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Syntax highlighting for code blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    
+    <!-- Custom blog post styles -->
+    <style>
+        .markdown-content {
+            color: var(--text-secondary) !important;
+            line-height: 1.8;
+        }
+        
+        .markdown-content h1 {
+            color: var(--primary-green) !important;
+            font-size: 2.5rem;
+            margin: 2rem 0 1rem 0;
+            text-shadow: 0 0 10px var(--primary-green);
+            border-bottom: 2px solid var(--primary-green);
+            padding-bottom: 0.5rem;
+        }
+        
+        .markdown-content h2 {
+            color: var(--neon-blue) !important;
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem 0;
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+        
+        .markdown-content h3 {
+            color: var(--primary-green) !important;
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.8rem 0;
+        }
+        
+        .markdown-content p {
+            color: #CCCCCC !important;
+            margin: 1rem 0;
+            text-align: justify;
+        }
+        
+        .markdown-content strong {
+            color: var(--text-white) !important;
+            font-weight: 600;
+        }
+        
+        .markdown-content ul, .markdown-content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .markdown-content li {
+            color: #CCCCCC !important;
+            margin: 0.5rem 0;
+        }
+        
+        .warning-box {
+            background: rgba(255, 0, 0, 0.1);
+            border-left: 4px solid var(--danger-red);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+        }
+        
+        .warning-box p {
+            color: #FFCCCC !important;
+            margin: 0;
+        }
+        
+        .highlight-box {
+            background: rgba(0, 255, 0, 0.1);
+            border-left: 4px solid var(--primary-green);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+        }
+        
+        .highlight-box p {
+            color: #CCFFCC !important;
+            margin: 0;
+        }
+        
+        .info-box {
+            background: rgba(0, 255, 255, 0.1);
+            border-left: 4px solid var(--neon-blue);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+        }
+        
+        .info-box p {
+            color: #CCFFFF !important;
+            margin: 0;
+        }
+        
+        .quote-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--warning-orange);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            font-style: italic;
+        }
+        
+        .quote-box p {
+            color: #FFFFCC !important;
+            margin: 0;
+        }
+        
+        .cyber-weapon-box {
+            background: rgba(255, 0, 0, 0.15);
+            border: 2px solid var(--danger-red);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+            position: relative;
+        }
+        
+        .cyber-weapon-box::before {
+            content: "⚠️ CLASSIFIED";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--bg-black);
+            color: var(--danger-red);
+            padding: 0.25rem 0.5rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .cyber-weapon-box p {
+            color: #FFDDDD !important;
+            margin: 0.5rem 0;
+        }
+        
+        .article-title {
+            color: var(--primary-green) !important;
+            text-align: center;
+            font-size: 2.2rem;
+            margin: 1rem 0;
+        }
+        
+        .article-info span {
+            color: var(--text-secondary) !important;
+            margin-right: 1rem;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            color: var(--danger-red);
+            font-size: 1.2rem;
+        }
+        
+        .timeline-date {
+            color: var(--neon-blue) !important;
+            font-weight: bold;
+            min-width: 120px;
+            margin-right: 1rem;
+        }
+        
+        .final-message {
+            background: linear-gradient(45deg, rgba(255, 0, 0, 0.1), rgba(0, 255, 0, 0.1));
+            border: 2px solid var(--primary-green);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 1rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .final-message::before {
+            content: "🔥";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-black);
+            font-size: 2rem;
+            padding: 0 1rem;
+        }
+        
+        .final-message p {
+            color: var(--text-white) !important;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 0 0 5px var(--primary-green);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="../index.html" style="color: var(--primary-green); text-decoration: none;">
+                    <span class="terminal-prompt">root@security:~$ </span>
+                </a>
+            </div>
+            <div class="nav-back">
+                <a href="index.html" style="color: var(--neon-blue); text-decoration: none;">
+                    <i class="fas fa-arrow-left"></i> Blog'a Dön
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <main style="padding-top: 100px;">
+        <article class="blog-article">
+            <div class="container">
+                <!-- Article Header -->
+                <header class="article-header">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">classified.md - Reading...</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="article-meta">
+                                <div class="terminal-line">
+                                    <span class="terminal-prompt">root@warfare:~$ </span>
+                                    <span class="command">decrypt -f siber-savas-gorunmeyen-cepheler.md</span>
+                                </div>
+                                <div class="terminal-output">
+                                    <h1 class="article-title">⚔️ Siber Savaş: "Görünmeyen Cephelerin Gücü"</h1>
+                                    <div class="article-info">
+                                        <span class="date">📅 30 Ocak 2024</span>
+                                        <span class="author">👤 Hıdır Samet Yalçınkaya</span>
+                                        <span class="reading-time">⏱️ 10 dakika okuma</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Article Content -->
+                <div class="article-content">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">vim siber-savas-gorunmeyen-cepheler.md</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="markdown-content">
+                                <p>Bir savaş alanı hayal ettiğimizde aklımıza ilk gelenler; tozu dumana katan tanklar, var gücüyle saldıran birlikler, gökyüzünü delen savaş uçakları, bombalar ve silah sesleridir. Ancak <strong>artık savaş böyle görünmüyor</strong>.</p>
+
+                                <p>Günümüzde bir cephe, <strong>dört duvar arasındaki sessiz bir odadan ibaret olabilir</strong>. Yeterli ekipman, internet bağlantısı ve yetenekli bir ekiple bir ülkenin elektriğini, suyunu, hatta tüm finansal ve savunma altyapısını çökertmek mümkün. Artık savaş, biçim değiştirdi.</p>
+
+                                <h2>🎯 Stuxnet: Dijital Dünyanın Sessiz Silahı</h2>
+                                <h3>"Siber Silahlar ve Modern Casusluk"</h3>
+
+                                <p>Bu aşamada, <strong>tarihin ilk siber silahlarından biri olan Stuxnet'ten</strong> bahsetmek gerekir.</p>
+
+                                <div class="timeline-item">
+                                    <span class="timeline-date">10 Kasım 2008</span>
+                                    <div>
+                                        <p>Barack Obama, seçimleri kazandıktan sonra Beyaz Saray'da dönemin başkanıyla görüştü. Bu görüşmede, yeni başkana Amerika'nın 2005'ten beri İsrail ile ortak geliştirdiği <strong>"Project Olympic Games"</strong> adlı çok gizli bir projeden söz edildi.</p>
+                                    </div>
+                                </div>
+
+                                <div class="cyber-weapon-box">
+                                    <p><strong>Hedef:</strong> İran'ın yer altına gömülü nükleer zenginleştirme tesisi</p>
+                                    <p><strong>Amaç:</strong> Uranyum santrifüjlerini sabote etmek</p>
+                                    <p><strong>Silah:</strong> Sadece 1 MB'tan küçük bir bilgisayar dosyası</p>
+                                    <p><strong>İçerik:</strong> 150 bin satırlık kusursuzca yazılmış kod</p>
+                                </div>
+
+                                <p>Bu yazılım, hedef sistemlere gizlice bulaşıyor; eğer doğru hedef değilse <strong>sessizce bekliyordu</strong>. Ta ki bir çalışanın dikkatsizce enfekte bir USB belleği nükleer tesisteki bilgisayara takmasına kadar…</p>
+
+                                <p>O an sistemin içinde uyanan bu yazılım, diğer bilgisayarlara da yayıldı. <strong>Santrifüjlerin hızını değiştirerek onları bozdu</strong> ama bu sırada sistemde hiçbir hata raporu çıkmıyor, her şey normal görünüyordu.</p>
+
+                                <div class="warning-box">
+                                    <p><strong>💰 Sonuç:</strong> İran'ın milyarlarca dolarlık zarara uğradığı düşünülüyor. Eğer bir savaş çıkmış olsaydı, Amerika İran'ın elektriğini kesebilir, savunma sistemlerini ve komuta kontrol merkezlerini devre dışı bırakabilirdi.</p>
+                                </div>
+
+                                <h2>🔓 Zero Day: Sessiz Tehdit</h2>
+                                <h3>"Zero Day Pazarının Karanlık Yüzü"</h3>
+
+                                <p>Bu noktada <strong>"Zero Day", yani "Sıfırıncı Gün"</strong> kavramını anlamak gerekir. Bu, yazılım üreticisinin henüz farkında olmadığı ve dolayısıyla önlem almak için sıfır günü kaldığı bir güvenlik açığıdır.</p>
+
+                                <p>Bir hacker bu tür bir açığı bulduğunda, onu kullanan sistem sahipleri bunun farkına bile varamaz.</p>
+
+                                <h3>💰 Beyaz Şapka vs Kara Borsa</h3>
+
+                                <div class="info-box">
+                                    <p><strong>🎯 Etik Hacker (Beyaz Şapka):</strong></p>
+                                    <ul style="margin: 0.5rem 0; padding-left: 1rem;">
+                                        <li>Apple: 1 milyon dolar ödül</li>
+                                        <li>Google: Yüz binlerce dolar ödül</li>
+                                        <li>Süreç: "Bug Bounty" programları</li>
+                                    </ul>
+                                </div>
+
+                                <div class="warning-box">
+                                    <p><strong>🖤 Kara Borsa:</strong></p>
+                                    <p>Devlet destekli gruplar, bu bilgilere <strong>milyonlarca dolar</strong> ödeyebilmektedir. Örneğin, bir Rus hacker, NATO dışı bir ülkeden bir müşterisinin iPhone'lara sızmak için bir açığa <strong>20 milyon dolar</strong> teklif ettiğini iddia etmiştir.</p>
+                                </div>
+
+                                <h2>⚛️ Bilgi: Yeni Çağın Nükleer Gücü</h2>
+
+                                <div class="quote-box">
+                                    <p><strong>Eski bir CIA çalışanının sözleri:</strong></p>
+                                    <p>"Bu olasılıklar bize 1945'i, yani atom bombasının dünyayı nasıl değiştirdiğini hatırlatıyor. Şimdi ise bilgi, sahip olanla olmayan arasındaki farkı radikal şekilde açıyor."</p>
+                                </div>
+
+                                <p>İran örneği dışında da saldırılara tanık olduk:</p>
+                                <ul>
+                                    <li><strong>Elektrik altyapılarının çökertilmesi</strong></li>
+                                    <li><strong>Hastanelerin hacklenmesi</strong></li>
+                                    <li><strong>Yoğun bakımdaki hastaların ölmesi</strong></li>
+                                </ul>
+
+                                <div class="warning-box">
+                                    <p><strong>⚠️ Şimdiki Tehdit:</strong> Bu tehdit, geleceğe ait bir senaryo değil. Birçok ülkenin sistemlerine hâlihazırda sızılmış olabilir. Zararlı yazılımlar, dijital damarlarımızda dolaşıyor ve sadece zamanı geldiğinde aktif olmak üzere bekliyor.</p>
+                                </div>
+
+                                <h2>👥 İnsan Faktörü: En Zayıf Halka</h2>
+
+                                <p>Tüm bu siber savaş tehditlerinden korunmak için sistemlerimizi mükemmel şekilde güvenli hâle getirsek bile <strong>bu yeterli olmaz</strong>.</p>
+
+                                <div class="highlight-box">
+                                    <p><strong>🔗 Kritik Gerçek:</strong> Her sistem, en zayıf halkası kadar güçlüdür. Ve tüm sistemlerin en zayıf halkası, o sistemi kullanan <strong>insanlardır</strong>.</p>
+                                </div>
+
+                                <p>İnsanların siber güvenlik farkındalığı düşük olduğu sürece, sistemlerin en korunaklı olanları bile bir anda savunmasız hâle gelebilir.</p>
+
+                                <div class="final-message">
+                                    <p>"Kodların arasındaki savaş çoktan başladı; peki, biz hangi taraftayız?"</p>
+                                </div>
+
+                                <h2>📚 Kaynakça</h2>
+                                <ol>
+                                    <li>Yenal, S., & Akdemıir, N. (2020). ULUSLARARASI İLİŞKİLERDE YENİ BİR KUVVET ÇARPANI: SİBER SAVAŞLAR ÜZERİNE BİR VAKA ANALİZİ. Çankırı Karatekin Üniversitesi Sosyal Bilimler Enstitüsü Dergisi, 11(1), 414–450.</li>
+                                    <li>ÇALIŞKAN, Aykut. Siber Savaş: Bilgi Krizi Mi Yoksa Güvenliği Mi?. SAVSAD Savunma ve Savaş Araştırmaları Dergisi, 2023, 33.1: 1–32.</li>
+                                    <li>bebarbilim.net</li>
+                                    <li>ÇELIK, Şener. STUXNET saldırısı ve ABD'nin siber savaş stratejisi: uluslararası hukukta kuvvet kullanmaktan kaçınma ilkesi çerçevesinde bir değerlendirme. Dokuz Eylül Üniversitesi Hukuk Fakültesi Dergisi, 2013, 15.1: 137–175.</li>
+                                    <li>ChatGPT OpenAI, 2025</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article Footer -->
+                <footer class="article-footer">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">git commit -m "Classified article completed"</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="article-tags">
+                                <span class="terminal-prompt">root@warfare:~$ </span>
+                                <span class="tag">#siber-savaş</span>
+                                <span class="tag">#stuxnet</span>
+                                <span class="tag">#zero-day</span>
+                                <span class="tag">#siber-güvenlik</span>
+                                <span class="tag">#dijital-silah</span>
+                            </div>
+                            <br>
+                            <div class="article-navigation">
+                                <a href="index.html" class="nav-btn">
+                                    <i class="fas fa-list"></i> Tüm Yazılar
+                                </a>
+                                <a href="../index.html#contact" class="nav-btn">
+                                    <i class="fas fa-comments"></i> Yorum Yap
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../js/matrix.js"></script>
+    <script>
+        // Syntax highlighting
+        document.addEventListener('DOMContentLoaded', (event) => {
+            hljs.highlightAll();
+        });
+
+        // Reading progress bar
+        window.addEventListener('scroll', () => {
+            const article = document.querySelector('.article-content');
+            const scrolled = window.scrollY;
+            const articleHeight = article.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const progress = (scrolled / (articleHeight - windowHeight)) * 100;
+            
+            // Update progress if needed
+            if (progress >= 0 && progress <= 100) {
+                document.title = `📖 ${Math.round(progress)}% - Siber Savaş: Görünmeyen Cephelerin Gücü`;
+            }
+        });
+    </script>
+</body>
+</html>

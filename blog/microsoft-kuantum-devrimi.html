@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft'un Kuantum Devrimi: Majorana Çipi | Hıdır Samet Yalçınkaya</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Syntax highlighting for code blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    
+    <!-- Custom blog post styles -->
+    <style>
+        .markdown-content {
+            color: var(--text-secondary) !important;
+            line-height: 1.8;
+        }
+        
+        .markdown-content h1 {
+            color: var(--primary-green) !important;
+            font-size: 2.5rem;
+            margin: 2rem 0 1rem 0;
+            text-shadow: 0 0 10px var(--primary-green);
+            border-bottom: 2px solid var(--primary-green);
+            padding-bottom: 0.5rem;
+        }
+        
+        .markdown-content h2 {
+            color: var(--neon-blue) !important;
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem 0;
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+        
+        .markdown-content h3 {
+            color: var(--primary-green) !important;
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.8rem 0;
+        }
+        
+        .markdown-content p {
+            color: #CCCCCC !important;
+            margin: 1rem 0;
+            text-align: justify;
+        }
+        
+        .markdown-content strong {
+            color: var(--text-white) !important;
+            font-weight: 600;
+        }
+        
+        .markdown-content ul, .markdown-content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .markdown-content li {
+            color: #CCCCCC !important;
+            margin: 0.5rem 0;
+        }
+        
+        .warning-box {
+            background: rgba(255, 0, 0, 0.1);
+            border-left: 4px solid var(--danger-red);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+        }
+        
+        .warning-box p {
+            color: #FFCCCC !important;
+            margin: 0;
+        }
+        
+        .highlight-box {
+            background: rgba(0, 255, 0, 0.1);
+            border-left: 4px solid var(--primary-green);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+        }
+        
+        .highlight-box p {
+            color: #CCFFCC !important;
+            margin: 0;
+        }
+        
+        .info-box {
+            background: rgba(0, 255, 255, 0.1);
+            border-left: 4px solid var(--neon-blue);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+        }
+        
+        .info-box p {
+            color: #CCFFFF !important;
+            margin: 0;
+        }
+        
+        .quote-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--warning-orange);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            font-style: italic;
+        }
+        
+        .quote-box p {
+            color: #FFFFCC !important;
+            margin: 0;
+        }
+        
+        .article-title {
+            color: var(--primary-green) !important;
+            text-align: center;
+            font-size: 2.2rem;
+            margin: 1rem 0;
+        }
+        
+        .article-info span {
+            color: var(--text-secondary) !important;
+            margin-right: 1rem;
+        }
+        
+        .comparison-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .comparison-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--bg-gray-light);
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .comparison-box h4 {
+            color: var(--neon-blue) !important;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="../index.html" style="color: var(--primary-green); text-decoration: none;">
+                    <span class="terminal-prompt">root@security:~$ </span>
+                </a>
+            </div>
+            <div class="nav-back">
+                <a href="index.html" style="color: var(--neon-blue); text-decoration: none;">
+                    <i class="fas fa-arrow-left"></i> Blog'a Dön
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <main style="padding-top: 100px;">
+        <article class="blog-article">
+            <div class="container">
+                <!-- Article Header -->
+                <header class="article-header">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">article.md - Reading...</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="article-meta">
+                                <div class="terminal-line">
+                                    <span class="terminal-prompt">root@blog:~$ </span>
+                                    <span class="command">head -n 5 microsoft-kuantum-devrimi.md</span>
+                                </div>
+                                <div class="terminal-output">
+                                    <h1 class="article-title">⚛️ Microsoft'un Kuantum Devrimi: Majorana Çipi ile Geleceği Şekillendirmek</h1>
+                                    <div class="article-info">
+                                        <span class="date">📅 25 Ocak 2024</span>
+                                        <span class="author">👤 Hıdır Samet Yalçınkaya</span>
+                                        <span class="reading-time">⏱️ 15 dakika okuma</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Article Content -->
+                <div class="article-content">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">vim microsoft-kuantum-devrimi.md</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="markdown-content">
+                                <p>Kuantum bilgisayarlar, bilim dünyasında büyük bir devrim olarak görülse de uzun süredir karşılaşılan teknik zorluklar nedeniyle pratik kullanıma geçmekte zorlanıyordu. Ancak <strong>Microsoft'un geliştirdiği Majorana çipi</strong>, bu alanda çığır açan bir yenilik sunarak kuantum çağını başlatacak bir dönüm noktası olarak değerlendiriliyor.</p>
+
+                                <div class="quote-box">
+                                    <p><strong>Microsoft'un kuantum uzmanı Dr. Chetan Nayak:</strong></p>
+                                    <p>"Bir duvara toslamıştık; tüm kuantum araştırmacıları gibi. Biz de bir adım geri attık ve 'Kuantum çağı için transistör benzeri bir çığır açıcı yaklaşıma ihtiyacımız var' dedik. Kendimize şu soruyu sorduk: Böyle bir icat için neye ihtiyacımız var? Yepyeni bir malzemeye, yepyeni bir çipe, yepyeni bir yaklaşıma… Ve işte Majorana çipi bu şekilde doğdu."</p>
+                                </div>
+
+                                <h2>🔧 Sorun Neydi? Microsoft Ne Çözdü?</h2>
+
+                                <h3>⚡ Kübitlerin Kırılganlığı ve Yüksek Hata Oranı</h3>
+                                <p>Klasik bilgisayarların temel birimi olan <strong>bitler</strong> yalnızca 0 veya 1 değerini alırken; kuantum bilgisayarların birimi olan <strong>kübitler</strong>, aynı anda hem 0 hem de 1 durumunda bulunabilir (süperpozisyon). Bu özellik, kuantum bilgisayarlarını teorik olarak olağanüstü güçlü hale getirir. Ancak pratikte karşılaşılan iki büyük engel vardır:</p>
+
+                                <h3>1. Kübitlerin Kararsızlığı</h3>
+                                <ul>
+                                    <li><strong>Aşırı Hassaslık:</strong> Kübitler, adeta bir kristal vazo kadar hassastır ve çevresel etkilerden çok kolay etkilenir.</li>
+                                    <li><strong>Bozucu Etkiler:</strong> Bir titreşim, elektromanyetik dalga ya da kozmik ışın; kübitin süperpozisyon durumunu bozabilir.</li>
+                                    <li><strong>Soğutma Gereksinimi:</strong> Günümüzde kübitler, mutlak sıfır sıcaklığına (yaklaşık -273°C) kadar soğutularak korunmaya çalışılmaktadır.</li>
+                                    <li><strong>Sınırlı Kararlılık:</strong> Bu koruma, yalnızca saniyenin milyarda biri kadar kararlılık sağlayabilmektedir.</li>
+                                </ul>
+
+                                <h3>2. Yüksek Hata Oranı</h3>
+                                <ul>
+                                    <li><strong>Klasik vs Kuantum:</strong> Klasik bilgisayarlarda trilyonda bir hata görülürken; kuantum bilgisayarlarda bu oran, her 1000 işlemde bir hataya kadar çıkmaktadır.</li>
+                                    <li><strong>Kübit Türleri:</strong> Kübitler, mantıksal ve fiziksel olmak üzere ikiye ayrılır.</li>
+                                    <li><strong>Mantıksal Kübitler:</strong> Hata düzeltme algoritmalarıyla güçlendirilmiş ve daha güvenilir birimlerdir.</li>
+                                    <li><strong>Ölçekleme Zorluğu:</strong> IBM'in kuantum yol haritasına göre; 1 mantıksal kübit üretmek için yaklaşık 1000 fiziksel kübit gereklidir.</li>
+                                    <li><strong>Hedef:</strong> Gerçekten kullanışlı bir kuantum bilgisayarı için ise en az 1 milyon fiziksel kübit şarttır.</li>
+                                </ul>
+
+                                <h2>📊 Gerçekten İşe Yarar Bir Kuantum Bilgisayar İçin Kaç Kübit Gerekli?</h2>
+
+                                <p>Kuantum bilgisayarlar; <strong>kanser tedavisinde ilaç keşfi, karbon yakalama teknolojileri, yeni malzemelerin geliştirilmesi ve ileri düzey yapay zekâ algoritmaları</strong> gibi alanlarda devrim niteliğinde katkılar sağlayabilir.</p>
+
+                                <div class="info-box">
+                                    <p><strong>💡 Kritik Sayı:</strong> Bu tür uygulamaların hayata geçirilebilmesi için, en az <strong>1 ila 10 milyon arasında kararlı fiziksel kübit</strong> gereklidir.</p>
+                                </div>
+
+                                <p>İşte tam bu noktada devreye giren Microsoft'un Majorana çipi, kuantum teknolojileri alanında büyük bir sıçrama potansiyeli taşıyor ve bilim dünyasında heyecanla karşılanıyor.</p>
+
+                                <h2>🚀 Majorana Çipi: Kuantum Dünyasında Yeni Bir Çağın Başlangıcı</h2>
+
+                                <p>Microsoft'un son duyurusundan önce, bilim insanları işe yarar bir kuantum bilgisayarın geliştirilmesinin <strong>en az 20–25 yıl süreceğini</strong> öngörüyordu. Hatta bazı araştırmacılar, bunun hiç mümkün olamayacağını dahi iddia ediyordu.</p>
+
+                                <p>Bu karamsar yaklaşımın temelinde, kübit sayısı arttıkça sistemin hata oranının ve yapısal karmaşıklığın da artması gerçeği yatıyordu. Ancak Microsoft'un geliştirdiği Majorana çipi, bu gidişatı değiştirme potansiyeline sahip.</p>
+
+                                <div class="highlight-box">
+                                    <p><strong>🔄 Paradigma Değişimi:</strong> Nasıl ki transistörler, klasik bilgisayar çağını başlatan dönüm noktası olduysa, Majorana çipi de kuantum çağının başlangıcı olabilir.</p>
+                                </div>
+
+                                <p>Microsoft, bu çipin <strong>1 milyon kübitlik bir kuantum sistemine ölçeklenebilir altyapı</strong> sunduğunu belirtiyor. Bu da kuantum bilgisayarların hayal olmaktan çıkıp gerçeğe dönüşmesinde önemli bir eşik olabilir.</p>
+
+                                <h2>⚙️ Majorana Çipi Nasıl Çalışıyor?</h2>
+
+                                <p>Microsoft'un geliştirdiği Majorana çipi, tamamen yeni bir malzeme olan <strong>topolojik süperiletken</strong> kullanılarak üretildi. Bu malzeme, indiyum arsenit ve alüminyum elementleri kullanılarak, atom düzeyinde inşa edilmiş özel bir yapıya sahiptir.</p>
+
+                                <h3>1. Majorana Parçacıkları</h3>
+                                <p>1930'larda İtalyan fizikçi <strong>Ettore Majorana</strong> tarafından teorik olarak öngörülen bu parçacıklar, uzun süre doğada var olmadığı düşünülen, ancak kuantum hesaplamalar için kritik bir yapı taşı olarak değerlendirilen varlıklardır. En büyük avantajları, <strong>doğal olarak çevresel gürültüye ve kuantum bozulmalara karşı dirençli olmalarıdır</strong>.</p>
+
+                                <h3>2. Topolojik Süperiletkenlik</h3>
+                                <p>Bu teknoloji, yarı iletkenlerin elektriği bazen iletme özelliği ile süperiletkenlerin sıfır direnç gösterme özelliğini birleştirir. Microsoft'un geliştirdiği bu topolojik çekirdek, <strong>hata toleransını donanım seviyesinde sağlayarak</strong> klasik mimarilere kıyasla önemli bir avantaj sunar.</p>
+
+                                <div class="info-box">
+                                    <p><strong>🛡️ Donanım Seviyesinde Koruma:</strong> Geleneksel kuantum bilgisayarlar hataları yazılımsal olarak düzeltmeye çalışırken, Majorana çipi bu hatalara fiziksel olarak direnç gösteren bir yapı sunar.</p>
+                                </div>
+
+                                <h2>⚖️ Klasik Kuantum Bilgisayarlar vs. Majorana Çipi</h2>
+
+                                <div class="comparison-section">
+                                    <div class="comparison-box">
+                                        <h4>🏢 Mevcut Sistemler</h4>
+                                        <ul>
+                                            <li>Oda büyüklüğünde kuantum bilgisayarlar</li>
+                                            <li>Her kübit için ayrı bileşenler, kablolar ve manyetik kalkanlar</li>
+                                            <li>1 milyon kübit için, teorik olarak futbol sahası büyüklüğünde alan gerekebilir</li>
+                                            <li>Altın sarısı "avize" yapısına benzeyen devasa makineler</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="comparison-box">
+                                        <h4>🔬 Majorana ile Yeni Yaklaşım</h4>
+                                        <ul>
+                                            <li>Azure veri merkezlerine entegre edilebilecek kadar kompakt yapı</li>
+                                            <li>"H" şeklinde alüminyum nanotel dizilimi sayesinde ölçeklenebilir çip tasarımı</li>
+                                            <li>Her "H" yapısı, 4 Majorana parçacığı ile 1 kübit oluşturur</li>
+                                            <li>Gerçek anlamda kullanılabilir kuantum bilgisayarlara ulaşmak için artık on yıllar değil, sadece birkaç yıl yeterli olabilir</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <h2>🔬 Kuantum Bilgisayarlar ve Microsoft'un Son Gelişmeleri: Henüz Başlangıç Aşamasında</h2>
+
+                                <p>Microsoft'un hedeflediği <strong>1 milyon kübitlik kuantum bilgisayar vizyonu</strong>, hâlâ gerçekleşmemiş bir hedef olarak duruyor. Ancak şirketin <strong>Nature dergisinde yayımlanan</strong> son çalışmasında, bu yolda önemli iki adım atıldı:</p>
+
+                                <ol>
+                                    <li><strong>Majorana parçacıkları laboratuvar ortamında başarıyla oluşturuldu.</strong></li>
+                                    <li><strong>Bu parçacıkların, kuantum bilgisini nasıl taşıyıp nasıl ölçtüğü gösterildi.</strong></li>
+                                </ol>
+
+                                <div class="warning-box">
+                                    <p><strong>⚠️ Önemli Not:</strong> Buna rağmen henüz çalışan bir topolojik kübit ortaya konmuş değil. Yani yalnızca parçacıklar gözlemlendi ve ölçüldü; ancak pratik olarak işleyen bir kübit yapısı henüz inşa edilmedi.</p>
+                                </div>
+
+                                <p>Bu gelişme elbette heyecan verici bir aşama. Ancak kuantum yolculuğunun henüz başındayız. Geçmişte benzer iddialar zamanla geri çekildiği için, bu alandaki ilerlemeleri <strong>temkinli bir iyimserlikle</strong> takip etmek önem taşıyor.</p>
+
+                                <div class="info-box">
+                                    <p><strong>🌍 Küresel Yarış:</strong> Bugün dünyada büyük bir kuantum yarışı sürüyor — ve Türkiye de bu gelişmelerin dışında kalmıyor.</p>
+                                </div>
+
+                                <h2>🎯 Sonuç: Kuantum Çağı Başlıyor</h2>
+
+                                <p>Microsoft'un geliştirdiği Majorana çipi, <strong>gerçekten işe yarar bir kuantum bilgisayar inşa etme yolunda devrimsel bir adım</strong> olarak görülüyor. Günümüzde klasik bilgisayarların milyarlarca yılda gerçekleştireceği işlemleri saniyeler içinde yapabilecek kuantum sistemleri, artık hayal olmaktan çıkıyor.</p>
+
+                                <p>Kuantum bilgisayarlar; <strong>yapay zekâdan tıbbi araştırmalara, malzeme bilimlerinden finansal modellere</strong> kadar birçok alanda çığır açıcı yenilikler getirebilir ve Majorana çipi sayesinde, bu gelecek artık on yıllar değil, <strong>yıllar içinde gerçeğe dönüşebilir</strong>.</p>
+
+                                <div class="highlight-box">
+                                    <p><strong>🚀 Gelecek Vizyonu:</strong> Majorana çipi sayesinde kuantum çağı, hayal olmaktan çıkıp gerçeğe dönüşme yolunda hızla ilerliyor.</p>
+                                </div>
+
+                                <h2>📚 Kaynakça</h2>
+                                <ol>
+                                    <li>Rini, Matteo. "Microsoft's Claim of a Topological Qubit Faces Tough Questions." Physics 18 (2025): 68.</li>
+                                    <li>Rizzoa, Alessandro. "Majorana Zero Modes in Microsoft Quantum Chips: The Fundamental Role of Spacetime Torsion."</li>
+                                    <li>Castelvecchi, Davide. "MICROSOFT'S QUANTUM CHIP LEAVES SOME PHYSICISTS SCEPTICAL." Nature 638 (2025): 27.</li>
+                                    <li>ChatGPT — OpenAI, 2025</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article Footer -->
+                <footer class="article-footer">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">git commit -m "Article completed"</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="article-tags">
+                                <span class="terminal-prompt">root@tags:~$ </span>
+                                <span class="tag">#kuantum-bilgisayar</span>
+                                <span class="tag">#microsoft</span>
+                                <span class="tag">#majorana-çipi</span>
+                                <span class="tag">#teknoloji</span>
+                                <span class="tag">#gelecek</span>
+                            </div>
+                            <br>
+                            <div class="article-navigation">
+                                <a href="index.html" class="nav-btn">
+                                    <i class="fas fa-list"></i> Tüm Yazılar
+                                </a>
+                                <a href="../index.html#contact" class="nav-btn">
+                                    <i class="fas fa-comments"></i> Yorum Yap
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../js/matrix.js"></script>
+    <script>
+        // Syntax highlighting
+        document.addEventListener('DOMContentLoaded', (event) => {
+            hljs.highlightAll();
+        });
+
+        // Reading progress bar
+        window.addEventListener('scroll', () => {
+            const article = document.querySelector('.article-content');
+            const scrolled = window.scrollY;
+            const articleHeight = article.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const progress = (scrolled / (articleHeight - windowHeight)) * 100;
+            
+            // Update progress if needed
+            if (progress >= 0 && progress <= 100) {
+                document.title = `📖 ${Math.round(progress)}% - Microsoft'un Kuantum Devrimi: Majorana Çipi`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesaj Gönderildi | Hıdır Samet Yalçınkaya</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: #000;
+            color: #00ff00;
+            font-family: 'Fira Code', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+        
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        .thanks-container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+        }
+        
+        .terminal-window {
+            background: rgba(10, 10, 10, 0.95);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+        }
+        
+        .terminal-header {
+            background: rgba(0, 255, 0, 0.1);
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid #00ff00;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .terminal-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .btn-close,
+        .btn-minimize,
+        .btn-maximize {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff5f56;
+        }
+        
+        .btn-minimize {
+            background: #ffbd2e;
+        }
+        
+        .btn-maximize {
+            background: #27ca3f;
+        }
+        
+        .terminal-title {
+            color: #00ff00;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .terminal-content {
+            padding: 1.5rem;
+            text-align: left;
+        }
+        
+        .terminal-line {
+            margin: 0.5rem 0;
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .terminal-prompt {
+            color: #00ff00;
+            font-weight: bold;
+        }
+        
+        .command {
+            color: #ffffff;
+        }
+        
+        .terminal-output {
+            margin: 1rem 0;
+            padding-left: 1rem;
+        }
+        
+        .terminal-output p {
+            margin: 0.5rem 0;
+        }
+        .success-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: successPulse 2s infinite;
+            text-align: center;
+        }
+        
+        @keyframes successPulse {
+            0%, 100% { 
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.5rem 1rem;
+            background: #00ff00;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .back-link:hover {
+            background: #00cc00;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    
+    <div class="thanks-container">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="btn-close"></span>
+                    <span class="btn-minimize"></span>
+                    <span class="btn-maximize"></span>
+                </div>
+                <div class="terminal-title">message-sent.sh - SUCCESS</div>
+            </div>
+            <div class="terminal-content">
+                <div class="success-icon">✅</div>
+                <div class="terminal-line">
+                    <span class="terminal-prompt">root@secure:~$ </span>
+                    <span class="command">./send-message.sh --status</span>
+                </div>
+                <div class="terminal-output">
+                    <p style="color: #00ff00; font-weight: bold;">[SUCCESS] Mesaj başarıyla gönderildi!</p>
+                    <p>Mesajınız için teşekkürler. En kısa sürede dönüş yapacağım.</p>
+                    <p style="color: #cccccc; font-size: 0.9rem;">⚡ System Response: ~24h</p>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-prompt">root@secure:~$ </span>
+                    <span class="command">exit</span>
+                </div>
+            </div>
+        </div>
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+    </div>
+
+    <script src="js/matrix.js"></script>
+</body>
+</html>

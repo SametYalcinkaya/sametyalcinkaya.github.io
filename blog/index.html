@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Hıdır Samet Yalçınkaya</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Simple Back Button -->
+    <div class="simple-nav">
+        <a href="../index.html" class="back-home-btn">
+            <i class="fas fa-home"></i>
+            <span>Ana Sayfaya Dön</span>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main style="padding-top: 100px;">
+        <section class="blog-section">
+            <div class="container">
+                <h1 class="section-title glitch" data-text="$ ls -la /blog/">📝 Blog Yazılarım</h1>
+                
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-close"></span>
+                            <span class="btn-minimize"></span>
+                            <span class="btn-maximize"></span>
+                        </div>
+                        <div class="terminal-title">blog@cybersec:~$ ls -la</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="blog-list" id="blog-list">
+                            <!-- Blog yazıları buraya JavaScript ile eklenecek -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- HSY Logo Modal -->
+    <div class="hsy-modal" id="hsy-modal">
+        <div class="hsy-modal-content">
+            <span class="close-hsy-modal">&times;</span>
+            <img src="../images/HSY.png" alt="HSY Logo" class="hsy-modal-logo">
+            <div class="hsy-modal-info">
+                <h2>Hıdır Samet Yalçınkaya</h2>
+                <p>Siber Güvenlik Uzmanı & Adli Bilişim Mühendisi</p>
+                <p>AI Researcher & Analitik Düşünce Uzmanı</p>
+                <p class="terminal-prompt">$ echo "Güvenlik, teknoloji ve innovasyon"</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/matrix.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Blog yazılarını listele
+        const blogPosts = [
+            {
+                title: "Siber Savaş: Görünmeyen Cephelerin Gücü",
+                date: "2024-01-30",
+                file: "siber-savas-gorunmeyen-cepheler.html",
+                description: "Modern siber savaş teknikleri, Stuxnet saldırısı ve Zero Day açıklarının karanlık dünyası"
+            },
+            {
+                title: "Microsoft'un Kuantum Devrimi: Majorana Çipi ile Geleceği Şekillendirmek",
+                date: "2024-01-25",
+                file: "microsoft-kuantum-devrimi.html",
+                description: "Microsoft'un devrimsel Majorana çipi ile kuantum bilgisayar teknolojisinin geleceği"
+            },
+            {
+                title: "Sosyal Mühendislikte Siber Suçların Maskesi",
+                date: "2024-01-20",
+                file: "sosyal-muhendislik-maskesi.html",
+                description: "İnsan psikolojisini hedef alan siber saldırıların maskesini açıyoruz"
+            },
+            {
+                title: "Siber Güvenlik Temelleri",
+                date: "2024-01-15",
+                file: "siber-guvenlik-temelleri.html",
+                description: "Modern siber güvenliğin temel prensipleri ve uygulamaları"
+            },
+            {
+                title: "Adli Bilişim Analiz Teknikleri", 
+                date: "2024-01-10",
+                file: "adli-bilisim-analiz.html",
+                description: "Dijital kanıtların toplanması ve analiz edilmesi"
+            },
+            {
+                title: "AI ile Güvenlik Analizi",
+                date: "2024-01-05", 
+                file: "ai-guvenlik-analizi.html",
+                description: "Yapay zeka destekli güvenlik analizi yöntemleri"
+            }
+        ];
+
+        function renderBlogList() {
+            const blogListContainer = document.getElementById('blog-list');
+            
+            blogPosts.forEach((post, index) => {
+                const blogItem = document.createElement('div');
+                blogItem.className = 'terminal-line';
+                blogItem.innerHTML = `
+                    <span class="terminal-prompt">root@blog:~$ </span>
+                    <span class="command">cat </span>
+                    <a href="${post.file}" class="blog-link" style="color: var(--neon-blue);">${post.file}</a>
+                    <span style="color: var(--text-muted); margin-left: 20px;">${post.date}</span>
+                `;
+                
+                const description = document.createElement('div');
+                description.className = 'terminal-output';
+                description.innerHTML = `<span style="color: var(--text-secondary);">${post.description}</span>`;
+                
+                blogListContainer.appendChild(blogItem);
+                blogListContainer.appendChild(description);
+                
+                // Add some spacing
+                const spacer = document.createElement('br');
+                blogListContainer.appendChild(spacer);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderBlogList);
+    </script>
+</body>
+</html>

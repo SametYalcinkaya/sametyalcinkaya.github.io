@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siber Güvenlik Temelleri | Hıdır Samet Yalçınkaya</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Syntax highlighting for code blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="../index.html" style="color: var(--primary-green); text-decoration: none;">
+                    <span class="terminal-prompt">root@security:~$ </span>
+                </a>
+            </div>
+            <div class="nav-back">
+                <a href="index.html" style="color: var(--neon-blue); text-decoration: none;">
+                    <i class="fas fa-arrow-left"></i> Blog'a Dön
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <main style="padding-top: 100px;">
+        <article class="blog-article">
+            <div class="container">
+                <!-- Article Header -->
+                <header class="article-header">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">article.md - Reading...</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="article-meta">
+                                <div class="terminal-line">
+                                    <span class="terminal-prompt">root@blog:~$ </span>
+                                    <span class="command">head -n 5 siber-guvenlik-temelleri.md</span>
+                                </div>
+                                <div class="terminal-output">
+                                    <h1 class="article-title">🛡️ Siber Güvenlik Temelleri</h1>
+                                    <div class="article-info">
+                                        <span class="date">📅 15 Ocak 2024</span>
+                                        <span class="author">👤 Hıdır Samet Yalçınkaya</span>
+                                        <span class="reading-time">⏱️ 8 dakika okuma</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Article Content -->
+                <div class="article-content">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">vim siber-guvenlik-temelleri.md</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="markdown-content">
+                                <h2>🎯 Giriş</h2>
+                                <p>Modern dijital dünyada siber güvenlik, hem bireyler hem de kuruluşlar için kritik bir konu haline gelmiştir. Bu yazıda, siber güvenliğin temel prensiplerini ve günümüzde karşılaştığımız başlıca tehditleri inceleyeceğiz.</p>
+
+                                <h2>🔐 CIA Üçlüsü</h2>
+                                <p>Siber güvenliğin temeli <strong>CIA Triad</strong> olarak bilinen üç ana prensibe dayanır:</p>
+                                
+                                <ul>
+                                    <li><strong>Confidentiality (Gizlilik)</strong> - Bilgilerin yetkisiz kişilerce erişilmesini önleme</li>
+                                    <li><strong>Integrity (Bütünlük)</strong> - Verilerin değiştirilmeden korunması</li>
+                                    <li><strong>Availability (Erişilebilirlik)</strong> - Sistemlerin kesintisiz çalışması</li>
+                                </ul>
+
+                                <h2>⚠️ Başlıca Siber Tehditler</h2>
+                                
+                                <h3>1. Malware Saldırıları</h3>
+                                <p>Kötü amaçlı yazılımlar (malware) sistemlere zarar vermek veya yetkisiz erişim sağlamak için tasarlanmıştır:</p>
+                                <ul>
+                                    <li>Virüsler</li>
+                                    <li>Trojanlar</li>
+                                    <li>Ransomware</li>
+                                    <li>Spyware</li>
+                                </ul>
+
+                                <h3>2. Sosyal Mühendislik</h3>
+                                <p>İnsan psikolojisini kullanarak bilgi çalmaya yönelik saldırılar:</p>
+                                <ul>
+                                    <li>Phishing e-postaları</li>
+                                    <li>Vishing (sesli dolandırıcılık)</li>
+                                    <li>Pretexting (sahte senaryo)</li>
+                                </ul>
+
+                                <h2>🛠️ Koruma Stratejileri</h2>
+
+                                <h3>Teknik Önlemler</h3>
+                                <pre><code class="bash"># Güvenlik duvarı konfigürasyonu
+sudo ufw enable
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# Sistem güncellemeleri
+sudo apt update && sudo apt upgrade -y
+
+# Antivirus taraması
+clamscan -r /home/user/</code></pre>
+
+                                <h3>İnsan Faktörü</h3>
+                                <ol>
+                                    <li><strong>Güvenlik Farkındalığı Eğitimi</strong></li>
+                                    <li><strong>Güçlü Parola Politikaları</strong></li>
+                                    <li><strong>İki Faktörlü Doğrulama</strong></li>
+                                    <li><strong>Düzenli Güvenlik Testleri</strong></li>
+                                </ol>
+
+                                <h2>📊 Risk Yönetimi</h2>
+                                <p>Etkili siber güvenlik için sistematik risk yönetimi şarttır:</p>
+
+                                <div class="risk-matrix" style="background: var(--bg-gray); padding: 1rem; border-radius: 0.5rem; margin: 1rem 0;">
+                                    <h4>Risk = Tehdit × Zafiyet × Etki</h4>
+                                    <p>Bu formül, güvenlik yatırımlarının önceliklendirilmesinde kullanılır.</p>
+                                </div>
+
+                                <h2>🎯 Sonuç</h2>
+                                <p>Siber güvenlik sürekli gelişen bir alan olup, teknolojik ve insan odaklı yaklaşımların birleşimini gerektirir. Proaktif güvenlik stratejileri, reaktif yaklaşımlardan her zaman daha etkilidir.</p>
+
+                                <h2>🔗 Kaynaklar</h2>
+                                <ul>
+                                    <li><a href="#" style="color: var(--neon-blue);">NIST Cybersecurity Framework</a></li>
+                                    <li><a href="#" style="color: var(--neon-blue);">OWASP Top 10</a></li>
+                                    <li><a href="#" style="color: var(--neon-blue);">ISO 27001 Standard</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article Footer -->
+                <footer class="article-footer">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">git commit -m "Article completed"</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="article-tags">
+                                <span class="terminal-prompt">root@tags:~$ </span>
+                                <span class="tag">#siber-güvenlik</span>
+                                <span class="tag">#güvenlik</span>
+                                <span class="tag">#cia-triad</span>
+                                <span class="tag">#malware</span>
+                            </div>
+                            <br>
+                            <div class="article-navigation">
+                                <a href="index.html" class="nav-btn">
+                                    <i class="fas fa-list"></i> Tüm Yazılar
+                                </a>
+                                <a href="../index.html#contact" class="nav-btn">
+                                    <i class="fas fa-comments"></i> Yorum Yap
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../js/matrix.js"></script>
+    <script>
+        // Syntax highlighting
+        document.addEventListener('DOMContentLoaded', (event) => {
+            hljs.highlightAll();
+        });
+
+        // Reading progress bar
+        window.addEventListener('scroll', () => {
+            const article = document.querySelector('.markdown-content');
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.offsetHeight;
+            const winHeight = window.innerHeight;
+            const scrollPercent = scrollTop / (docHeight - winHeight);
+            const scrollPercentRounded = Math.round(scrollPercent * 100);
+            
+            // Update terminal title with progress
+            const terminalTitle = document.querySelector('.terminal-title');
+            if (scrollPercentRounded > 0 && scrollPercentRounded < 100) {
+                terminalTitle.textContent = `Reading... ${scrollPercentRounded}%`;
+            }
+        });
+    </script>
+
+    <style>
+        /* Article-specific styles */
+        .article-header, .article-content, .article-footer {
+            margin-bottom: 2rem;
+        }
+
+        .article-meta .article-info {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .markdown-content {
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .markdown-content h2 {
+            color: var(--primary-green);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .markdown-content h3 {
+            color: var(--neon-blue);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .markdown-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .markdown-content pre {
+            background: var(--bg-darker);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            border: 1px solid var(--primary-green);
+        }
+
+        .markdown-content code {
+            background: var(--bg-gray);
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: var(--font-mono);
+            color: var(--primary-green);
+        }
+
+        .article-tags .tag {
+            color: var(--neon-blue);
+            margin-right: 1rem;
+        }
+
+        .article-navigation {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            color: var(--primary-green);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--primary-green);
+            border-radius: 0.25rem;
+            transition: all var(--transition-normal);
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-green);
+            color: var(--bg-black);
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .article-meta .article-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .article-navigation {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>

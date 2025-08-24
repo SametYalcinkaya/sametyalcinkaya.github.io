@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hıdır Samet Yalçınkaya - Siber Güvenlik Uzmanı, Adli Bilişim Mühendisi ve Yapay Zeka Araştırmacısı. Modern hacker temalı portföy sitesi ile projelerim, sertifikalarım ve deneyimlerim.">
+    <meta name="keywords" content="siber güvenlik, cybersecurity, adli bilişim, digital forensics, artificial intelligence, hacker">
+    <meta name="author" content="Hıdır Samet Yalçınkaya">
+    
+    <title>Hıdır Samet Yalçınkaya</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Hıdır Samet Yalçınkaya - Siber Güvenlik Uzmanı">
+    <meta property="og:description" content="Siber Güvenlik, Adli Bilişim Mühendisliği ve AI konularında uzman. Modern hacker-style portföy sitesi.">
+    <meta property="og:image" content="images/HSY.png">
+    <meta property="og:url" content="https://sametyn558.github.io">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="HSY Portfolio">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hıdır Samet Yalçınkaya - Siber Güvenlik Uzmanı">
+    <meta name="twitter:description" content="Siber Güvenlik, Adli Bilişim Mühendisliği ve AI konularında uzman.">
+    <meta name="twitter:image" content="images/HSY.png">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Turkish">
+    <meta name="revisit-after" content="7 days">
+    <meta name="theme-color" content="#00FF00">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Load fonts immediately without preload to prevent warnings -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" media="all">
+    
+    <!-- Inline critical font CSS to ensure immediate availability -->
+    <style>
+        /* Force immediate font usage to prevent preload warnings */
+        html {
+            font-family: 'Fira Code', 'Courier New', monospace;
+        }
+        
+        /* Ensure fonts are immediately available and prevent FOUT */
+        body, .terminal-prompt, .nav-link, .btn, .hero-name, .command, code, pre {
+            font-family: 'Fira Code', 'Courier New', monospace !important;
+        }
+        
+        /* Fallback for Matrix canvas if Fira Code fails to load */
+        #matrix-canvas {
+            font-family: 'Fira Code', 'Courier New', 'Lucida Console', Monaco, monospace;
+        }
+        
+        /* Hidden element to force font loading immediately */
+        .font-preloader {
+            position: absolute;
+            left: -9999px;
+            font-family: 'Fira Code';
+            font-weight: 300;
+        }
+        
+        .font-preloader::before {
+            content: 'Loading fonts...';
+            font-weight: 400;
+        }
+        
+        .font-preloader::after {
+            content: 'Font test';
+            font-weight: 500;
+        }
+    </style>
+    
+    <!-- Font loading script to prevent preload warnings -->
+    <script>
+        // Force immediate font usage to prevent preload warnings
+        (function() {
+            // Create hidden element to force font loading
+            var fontTest = document.createElement('div');
+            fontTest.className = 'font-preloader';
+            fontTest.innerHTML = 'Font loading test';
+            fontTest.style.cssText = 'position:absolute;left:-9999px;font-family:Fira Code;';
+            document.head.appendChild(fontTest);
+            
+            // Force browser to calculate font metrics immediately
+            if (document.fonts && document.fonts.load) {
+                document.fonts.load('1em Fira Code').then(function() {
+                    console.log('Fira Code font loaded successfully');
+                }).catch(function() {
+                    console.log('Fira Code font fallback to system fonts');
+                });
+            }
+            
+            // Remove the test element after forcing font usage
+            setTimeout(function() {
+                if (fontTest.parentNode) {
+                    fontTest.parentNode.removeChild(fontTest);
+                }
+            }, 10);
+        })();
+    </script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Hidden font preloader to force immediate font usage -->
+    <div class="font-preloader" style="position:absolute;left:-9999px;font-family:'Fira Code';font-weight:300;">Loading</div>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="loading-text">HSY</div>
+            </div>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+            <div class="loading-status">Initializing security protocols...</div>
+        </div>
+    </div>
+
+    <!-- Matrix Rain Canvas Background -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="images/logo.svg" alt="Cyber Security Logo" class="brand-logo">
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-command="/home">
+                        <i class="fas fa-terminal"></i> /home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-command="/about">
+                        <i class="fas fa-user-secret"></i> /about
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link" data-command="/skills">
+                        <i class="fas fa-shield-alt"></i> /skills
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#videos" class="nav-link" data-command="/videos">
+                        <i class="fas fa-video"></i> /videos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog/index.html" class="nav-link" data-command="/blog">
+                        <i class="fas fa-code"></i> /blog
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="docs/index.html" class="nav-link" data-command="/docs">
+                        <i class="fas fa-file-alt"></i> /docs
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-command="/contact">
+                        <i class="fas fa-envelope"></i> /contact
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="nav-right">
+                <div class="personal-logo">
+                    <img src="images/HSY.png" alt="HSY Logo" class="hsy-logo">
+                </div>
+                <div class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false" role="button" tabindex="0">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">security@terminal:~</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">root@samet:~$ </span>
+                                <span class="command">whoami</span>
+                            </div>
+                            <div class="terminal-output">
+                                <h1 class="hero-name" id="hero-name"></h1>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">root@samet:~$ </span>
+                                <span class="command">cat /about/profile.txt</span>
+                            </div>
+                            <div class="terminal-output">
+                                <p class="hero-description" id="hero-description"></p>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">root@samet:~$ </span>
+                                <span class="command">ls -la /specialization/</span>
+                            </div>
+                            <div class="terminal-output">
+                                <div class="specializations">
+                                    <div class="spec-item">🛡️ Siber Güvenlik</div>
+                                    <div class="spec-item">🔍 Adli Bilişim Mühendisliği</div>
+                                    <div class="spec-item">🤖 Yapay Zeka Uygulamaları</div>
+                                    <div class="spec-item">🧠 Analitik Düşünce & Karar Alma</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-terminal"></i> ./contact.sh
+                        </a>
+                        <a href="#" class="btn btn-secondary" id="view-cv-btn">
+                            <i class="fas fa-eye"></i> ./view-cv.sh
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title glitch" data-text="$ cat /about/me.txt">/about/me.txt</h2>
+                <div class="about-content">
+                    <div class="about-terminal">
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="btn-close"></span>
+                                    <span class="btn-minimize"></span>
+                                    <span class="btn-maximize"></span>
+                                </div>
+                                <div class="terminal-title">profile.sh - Executing...</div>
+                            </div>
+                            <div class="terminal-body">
+                                <div class="about-text">
+                                    <p>Bireysel kullanıcıların siber güvenliğinden işletmelerin finansal güvenliğine kadar geniş bir alanda çalışmalar yürütüyorum.</p>
+                                    <p>Adli Bilişim Mühendisliği alanında ihtisas yaparken, yapay zekayı projelerimde etkin şekilde kullanıyorum.</p>
+                                    <p>Analitik düşünce ve mantıksal karar alma yeteneğimle birçok projede çalışmalar yaptım.</p>
+                                    <p>Siber güvenlik topluluğunda etkinlikler organize edip, sosyal çalışmalara katkıda bulunduk.</p>
+                                    <p>Ulusal ve uluslararası yarışmalara katılarak deneyimlerimi geliştirdim.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <div class="container">
+                <h2 class="section-title glitch" data-text="$ ./skill-matrix.exe">./skill-matrix.exe</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <i class="fas fa-shield-alt skill-icon"></i>
+                            <h3>Siber Güvenlik</h3>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="95"></div>
+                        </div>
+                        <div class="skill-level">95%</div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <i class="fas fa-search skill-icon"></i>
+                            <h3>Adli Bilişim</h3>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="90"></div>
+                        </div>
+                        <div class="skill-level">90%</div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <i class="fas fa-robot skill-icon"></i>
+                            <h3>Yapay Zeka</h3>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="85"></div>
+                        </div>
+                        <div class="skill-level">85%</div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <i class="fas fa-brain skill-icon"></i>
+                            <h3>Analitik Düşünce</h3>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="98"></div>
+                        </div>
+                        <div class="skill-level">98%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="videos" id="videos">
+            <div class="container">
+                <h2 class="section-title glitch" data-text="$ ls /videos/">📺 Video Arşivi</h2>
+                <div class="videos-grid" id="videos-grid">
+                    <!-- Video cards will be populated by JavaScript -->
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="images/video1.jpg" alt="Siber Güvenliğe Giriş: Yeni Başlayanlar İçin Temel Bilgiler" loading="lazy">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-duration">6:05</div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Siber Güvenliğe Giriş: Yeni Başlayanlar İçin Temel Bilgiler</h3>
+                            <div class="video-stats">
+                                <span class="views">1.2K görüntüleme</span>
+                                <span class="date">2 gün önce</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="images/video2.jpg" alt="Siber Dünyanın En Gizemli Saldırısı: Stuxnet!" loading="lazy">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-duration">15:45</div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Siber Dünyanın En Gizemli Saldırısı: Stuxnet!</h3>
+                            <div class="video-stats">
+                                <span class="views">856 görüntüleme</span>
+                                <span class="date">1 hafta önce</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="images/video3.jpg" alt="Hacklenmekten Nasıl Korunurum? Bilgisayar Güvenliği İçin 10 Temel İpucu" loading="lazy">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-duration">22:18</div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Hacklenmekten Nasıl Korunurum? Bilgisayar Güvenliği İçin 10 Temel İpucu</h3>
+                            <div class="video-stats">
+                                <span class="views">2.1K görüntüleme</span>
+                                <span class="date">2 hafta önce</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title glitch" data-text="$ ./contact.exe">./contact.exe</h2>
+                <div class="contact-content">
+                    <div class="contact-terminal">
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="btn-close"></span>
+                                    <span class="btn-minimize"></span>
+                                    <span class="btn-maximize"></span>
+                                </div>
+                                <div class="terminal-title">secure-contact.sh</div>
+                            </div>
+                            <div class="terminal-body">
+                                <form class="contact-form" id="contact-form" action="https://formspree.io/f/movnaalr" method="POST" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label class="terminal-prompt">root@secure:~$ echo "name:" && read name</label>
+                                        <input type="text" id="name" name="name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="terminal-prompt">root@secure:~$ echo "email:" && read email</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="terminal-prompt">root@secure:~$ echo "subject:" && read subject</label>
+                                        <input type="text" id="subject" name="subject" placeholder="Konu başlığı..." required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="terminal-prompt">root@secure:~$ echo "message:" && read message</label>
+                                        <textarea id="message" name="message" rows="5" required></textarea>
+                                    </div>
+                                    <!-- Formspree configuration -->
+                                    <input type="hidden" name="_next" value="thanks.html">
+                                    <input type="hidden" name="_subject" value="Yeni İletişim Formu Mesajı">
+                                    <input type="hidden" name="_captcha" value="false">
+                                    <input type="text" name="_gotcha" style="display:none" />
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane"></i> ./send-message.sh
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h3>$ ls /social/</h3>
+                        <div class="social-grid">
+                            <a href="https://www.linkedin.com/in/hidirsametyalcinkaya" class="social-link" data-social="linkedin">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/SametYalcinkaya" class="social-link" data-social="github">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://www.instagram.com/sametyalcinkaya23?igsh=eWgwYmkxYzllZ3Ft" class="social-link" data-social="twitter">
+                                <i class="fab fa-instagram"></i>
+                                <span>İnstagram</span>
+                            </a>
+                            <a href="mailto:hidirsametyalcinkaya@gmail.com" class="social-link" data-social="email">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <span class="terminal-prompt">root@security:~$ </span>
+                    <span>© 2025 Hıdır Samet Yalçınkaya. System Response: 24h</span>
+                </div>
+                <div class="footer-status">
+                    <span class="status-indicator"></span>
+                    <span>System Online</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- HSY Logo Modal -->
+    <div class="hsy-modal" id="hsy-modal">
+        <div class="hsy-modal-content">
+            <span class="close-hsy-modal">&times;</span>
+            <img src="images/HSY.png" alt="HSY Logo" class="hsy-modal-logo">
+            <div class="hsy-modal-info">
+                <h2>Hıdır Samet Yalçınkaya</h2>
+                <p>Siber Güvenlik Uzmanı & Adli Bilişim Mühendisi</p>
+                <p>Red Team & Web Penetrasyon</p>
+                <p class="terminal-prompt">$ echo "Güvenlik, teknoloji ve innovasyon"</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn">
+        <i class="fas fa-chevron-up"></i>
+        <div class="btn-tooltip">Yukarı Çık</div>
+    </button>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="video-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="video-container">
+                <iframe id="video-frame" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- CV Viewer Modal -->
+    <div class="cv-modal" id="cv-modal">
+        <div class="cv-modal-content">
+            <div class="cv-modal-header">
+                <div class="terminal-buttons">
+                    <span class="btn-close"></span>
+                    <span class="btn-minimize"></span>
+                    <span class="btn-maximize"></span>
+                </div>
+                <div class="terminal-title">CV_VIEWER v1.0 | viewing@cv</div>
+                <span class="close-cv-modal">&times;</span>
+            </div>
+            <div class="cv-modal-body">
+                <div class="cv-viewer-container">
+                    <iframe id="cv-frame" src="docs/Hıdır_SAMET-CV.pdf" type="application/pdf" width="100%" height="100%"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/matrix.js"></script>
+    <script src="js/typewriter.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

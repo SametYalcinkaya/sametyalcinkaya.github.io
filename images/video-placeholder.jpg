@@ -1,0 +1,30 @@
+<svg width="400" height="225" viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="225" fill="#0a0a0a"/>
+  <rect x="2" y="2" width="396" height="221" fill="none" stroke="#00FF00" stroke-width="2"/>
+  
+  <!-- Play Button -->
+  <circle cx="200" cy="112.5" r="30" fill="#00FF00" opacity="0.8"/>
+  <path d="M190 100 L190 125 L215 112.5 Z" fill="#000000"/>
+  
+  <!-- Video Title Area -->
+  <rect x="10" y="10" width="200" height="20" fill="#00FF00" opacity="0.3"/>
+  <text x="15" y="25" font-family="monospace" font-size="12" fill="#00FF00">CYBER SECURITY VIDEO</text>
+  
+  <!-- Duration Badge -->
+  <rect x="350" y="185" width="40" height="20" fill="#000000" stroke="#00FF00" stroke-width="1"/>
+  <text x="360" y="198" font-family="monospace" font-size="10" fill="#00FF00">12:34</text>
+  
+  <!-- Matrix Pattern -->
+  <g font-family="monospace" font-size="8" fill="#00FF00" opacity="0.2">
+    <text x="50" y="50">01001001</text>
+    <text x="50" y="70">11010110</text>
+    <text x="50" y="90">01101001</text>
+    <text x="300" y="50">10101010</text>
+    <text x="300" y="70">01010101</text>
+    <text x="300" y="90">11111000</text>
+  </g>
+  
+  <!-- Security Icons -->
+  <path d="M20 150 L30 150 L30 155 L25 165 L20 155 Z" fill="#00FFFF" opacity="0.6"/>
+  <path d="M350 50 L360 50 L360 55 L355 65 L350 55 Z" fill="#00FFFF" opacity="0.6"/>
+</svg>

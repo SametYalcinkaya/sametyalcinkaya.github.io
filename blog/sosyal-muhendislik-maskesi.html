@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sosyal Mühendislikte Siber Suçların Maskesi | Hıdır Samet Yalçınkaya</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Syntax highlighting for code blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    
+    <!-- Custom blog post styles -->
+    <style>
+        .markdown-content {
+            color: var(--text-secondary) !important;
+            line-height: 1.8;
+        }
+        
+        .markdown-content h1 {
+            color: var(--primary-green) !important;
+            font-size: 2.5rem;
+            margin: 2rem 0 1rem 0;
+            text-shadow: 0 0 10px var(--primary-green);
+            border-bottom: 2px solid var(--primary-green);
+            padding-bottom: 0.5rem;
+        }
+        
+        .markdown-content h2 {
+            color: var(--neon-blue) !important;
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem 0;
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+        
+        .markdown-content h3 {
+            color: var(--primary-green) !important;
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.8rem 0;
+        }
+        
+        .markdown-content p {
+            color: #CCCCCC !important;
+            margin: 1rem 0;
+            text-align: justify;
+        }
+        
+        .markdown-content strong {
+            color: var(--text-white) !important;
+            font-weight: 600;
+        }
+        
+        .markdown-content ul, .markdown-content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .markdown-content li {
+            color: #CCCCCC !important;
+            margin: 0.5rem 0;
+        }
+        
+        .warning-box {
+            background: rgba(255, 0, 0, 0.1);
+            border-left: 4px solid var(--danger-red);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+        }
+        
+        .warning-box p {
+            color: #FFCCCC !important;
+            margin: 0;
+        }
+        
+        .highlight-box {
+            background: rgba(0, 255, 0, 0.1);
+            border-left: 4px solid var(--primary-green);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+        }
+        
+        .highlight-box p {
+            color: #CCFFCC !important;
+            margin: 0;
+        }
+        
+        .article-title {
+            color: var(--primary-green) !important;
+            text-align: center;
+            font-size: 2.2rem;
+            margin: 1rem 0;
+        }
+        
+        .article-info span {
+            color: var(--text-secondary) !important;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="../index.html" style="color: var(--primary-green); text-decoration: none;">
+                    <span class="terminal-prompt">root@security:~$ </span>
+                </a>
+            </div>
+            <div class="nav-back">
+                <a href="index.html" style="color: var(--neon-blue); text-decoration: none;">
+                    <i class="fas fa-arrow-left"></i> Blog'a Dön
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <main style="padding-top: 100px;">
+        <article class="blog-article">
+            <div class="container">
+                <!-- Article Header -->
+                <header class="article-header">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">article.md - Reading...</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="article-meta">
+                                <div class="terminal-line">
+                                    <span class="terminal-prompt">root@blog:~$ </span>
+                                    <span class="command">head -n 5 sosyal-muhendislik-maskesi.md</span>
+                                </div>
+                                <div class="terminal-output">
+                                    <h1 class="article-title">🎭 Sosyal Mühendislikte Siber Suçların Maskesi</h1>
+                                    <div class="article-info">
+                                        <span class="date">📅 20 Ocak 2024</span>
+                                        <span class="author">👤 Hıdır Samet Yalçınkaya</span>
+                                        <span class="reading-time">⏱️ 12 dakika okuma</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Article Content -->
+                <div class="article-content">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">vim sosyal-muhendislik-maskesi.md</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="markdown-content">
+                                <h2>🎯 Sosyal Mühendislik Nedir?</h2>
+                                <p>Sosyal mühendislik, en basit ifadeyle <strong>insanları manipüle ederek güvenlik önlemlerini aşma sanatıdır</strong>. Saldırganlar, teknik yöntemlerden çok psikolojik manipülasyon kullanarak hedeflerini aldatır ve bilgi edinmeye çalışır. Hedef kitle geniş çaplı bir grup olabileceği gibi, tamamen bireysel bir kişiyi de kapsayabilir.</p>
+
+                                <p>Sosyal mühendislik saldırılarının temel amacı, kişisel verilere, sistemlere veya yetkisiz erişimin mümkün olmadığı bir alana erişmektir. Bunu başarmak için saldırganlar, kurbanlarını ikna edici senaryolarla kandırır ve onların farkında olmadan güvenlik açıklarını açığa çıkarmalarını sağlar.</p>
+
+                                <div class="warning-box" style="background: rgba(255, 0, 0, 0.1); border-left: 4px solid var(--danger-red); padding: 1rem; margin: 1rem 0;">
+                                    <p><strong>⚠️ Önemli Nokta:</strong> Sosyal mühendislik doğrudan bir siber saldırı türü değildir. Daha çok, farklı saldırı türlerini destekleyen bir yöntem veya taktik olarak kullanılır.</p>
+                                </div>
+
+                                <h2>🛠️ Sosyal Mühendislik Teknikleri</h2>
+
+                                <h3>🔹 Baiting (Yemleme)</h3>
+                                <p>İnsanların merak duygusunu istismar eden bir saldırı türüdür. Örneğin, bir çalışanın masasına "Özel Dosyalar" yazılı bir USB bellek bırakılır. Kurban, içeriği merak edip belleği bilgisayara taktığında zararlı yazılım çalışır ve saldırgana erişim sağlanmış olur.</p>
+
+                                <h3>🔹 Phishing (Oltalama)</h3>
+                                <p>Geniş çaplı bir saldırı olup, saldırganlar sahte e-postalar veya mesajlar ile kurbanları kandırarak kişisel bilgilerini ele geçirmeye çalışır. Genellikle sahte bir web sitesine yönlendiren bağlantılar içerir. Kurban bağlantıya tıklayıp giriş yaptığında bilgileri doğrudan saldırgana aktarılmış olur.</p>
+
+                                <h3>🔹 Spear Phishing (Hedefli Oltalama)</h3>
+                                <p>Oltalama saldırılarının daha gelişmiş ve kişiye özel versiyonudur. Saldırgan, hedefinin adı, ilgi alanları veya çalıştığı şirket hakkında bilgi toplayarak daha ikna edici bir mesaj hazırlar. Böylece kurban, saldırganın güvenilir biri olduğuna inanır.</p>
+
+                                <h3>🔹 Impersonation (Kimlik Taklidi)</h3>
+                                <p>Saldırgan, güvenilir bir kişi veya kurum gibi davranarak hedefini kandırmaya çalışır. Örneğin, sahte bir banka çalışanı gibi davranarak kişisel bilgileri ele geçirebilir veya bir web sitesinin birebir kopyasını yaparak kurbanı yanıltabilir.</p>
+
+                                <h3>🔹 Watering Hole (Sulama Deliği Saldırısı)</h3>
+                                <p>Bu saldırı, güvenilir internet sitelerini hedef alarak zararlı yazılımlar yerleştirme prensibine dayanır. Kullanıcılar, her zaman ziyaret ettikleri bir siteye girdiklerinde, farkında olmadan virüslü dosyalar indirir ve sistemleri ele geçirilebilir.</p>
+
+                                <h3>🔹 Vishing (Sesli Oltalama)</h3>
+                                <p>Baiting ve kimlik taklidine benzer olsa da telefon görüşmesi yoluyla gerçekleştirilir. Saldırgan, güvenilir bir kişi gibi davranarak hedefinden bilgi almaya çalışır. Genellikle banka hesap bilgilerini ele geçirmek için kullanılır.</p>
+
+                                <h2>🛡️ Sosyal Mühendislikten Korunma Yolları</h2>
+
+                                <h3>🔸 1) Farkındalık ve Eğitim</h3>
+                                <p>Hem bireysel hem kurumsal düzeyde, sosyal mühendislik saldırılarına karşı eğitim programları düzenlemek büyük önem taşır. Çalışanlar ve bireyler, olası tehditleri tanıyıp bilinçli hareket ederse, bu tür saldırıların başarı oranı düşer.</p>
+
+                                <h3>🔸 2) Şüpheci ve Dikkatli Olmak</h3>
+                                <p>Şüpheli e-postalar, telefon aramaları veya bilinmeyen bağlantılar her zaman risk taşır. Kurum içinden gelmiş gibi görünen, ancak içeriği şüpheli mesajlara dikkat etmek ve gönderenin kimliğini doğrulamadan bilgi paylaşmamak önemlidir.</p>
+
+                                <h3>🔸 3) Güçlü ve Güncellenmiş Şifreler Kullanmak</h3>
+                                <p>Zayıf ve tahmin edilebilir şifreler, saldırganların işini kolaylaştırır. Güçlü şifreler oluşturmak, belirli aralıklarla değiştirmek ve her hesap için farklı şifreler kullanmak güvenliği artırır. Mümkünse iki faktörlü kimlik doğrulama (2FA) kullanılmalıdır.</p>
+
+                                <h3>🔸 4) Sosyal Medya Paylaşımlarına Dikkat Etmek</h3>
+                                <p>Saldırganlar, sosyal medya hesaplarından paylaşılan bilgilerle kişiye özel saldırı senaryoları oluşturabilir. Çalıştığınız yer, seyahat planlarınız veya kişisel ilgi alanlarınız gibi bilgileri herkesle paylaşmamak, olası saldırıların önüne geçebilir.</p>
+
+                                <h3>🔸 5) Güncel ve Etkili Güvenlik Yazılımları Kullanmak</h3>
+                                <p>Antivirüs programları, güvenlik duvarları ve kötü amaçlı yazılım tarayıcıları, sistemlerinizi birçok saldırıdan koruyabilir. Ancak bu yazılımların güncel olması büyük önem taşır. Güncellenmemiş bir güvenlik yazılımı, yeni tehditlere karşı savunmasız kalabilir.</p>
+
+                                <h3>🔸 6) Bildirim ve İhbar Mekanizmaları Kurmak</h3>
+                                <p>Özellikle kurumsal yapılar için, çalışanların şüpheli durumları bildirebileceği bir ihbar mekanizması oluşturmak, saldırılara karşı hızlı önlem alınmasını sağlar. Çalışanlardan gelen şüpheli e-posta veya çağrı ihbarları, olası büyük saldırıların önüne geçebilir.</p>
+
+                                <h2>🎯 Sonuç</h2>
+                                <p>Sosyal mühendislik, insan psikolojisini hedef alan siber saldırıların en tehlikeli türlerinden biridir. Saldırganlar, güvenlik açıklarını teknik yollarla değil, insanların zaaflarını kullanarak aşmaya çalışır.</p>
+                                
+                                <p>Bu tür saldırılardan korunmanın en etkili yolu, <strong>bilinçlenmek, şüpheci olmak ve güçlü güvenlik önlemleri almaktır</strong>. Eğitimler, güvenli parola kullanımı, sosyal medya paylaşımlarına dikkat etmek ve güvenlik yazılımlarını güncel tutmak, sosyal mühendislik saldırılarına karşı önemli birer kalkandır.</p>
+
+                                <div class="highlight-box" style="background: rgba(0, 255, 0, 0.1); border-left: 4px solid var(--primary-green); padding: 1rem; margin: 1rem 0;">
+                                    <p><strong>💡 Unutmayın:</strong> Teknoloji ne kadar gelişirse gelişsin, insan faktörü en büyük güvenlik açığıdır.</p>
+                                </div>
+
+                                <h2>📚 Kaynakça</h2>
+                                <ol>
+                                    <li>Kaspersky. (n.d.). How to avoid social engineering attacks?</li>
+                                    <li>Karel. (n.d.). Sosyal mühendislik saldırıları nedir, korunma yöntemleri nelerdir?</li>
+                                    <li>Berqnet. (n.d.). Sosyal mühendislik saldırıları ve korunma yolları.</li>
+                                    <li>Siberay. (n.d.). Sosyal mühendislik nedir?</li>
+                                    <li>Garanti BBVA. (n.d.). Sosyal mühendislik saldırıları ve korunma yöntemleri.</li>
+                                    <li>ChatGPT — OpenAI, 2025</li>
+                                    <li>İş Bankası. (n.d.). Sosyal mühendislik saldırıları nedir?</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article Footer -->
+                <footer class="article-footer">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">git commit -m "Article completed"</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="article-tags">
+                                <span class="terminal-prompt">root@tags:~$ </span>
+                                <span class="tag">#sosyal-mühendislik</span>
+                                <span class="tag">#phishing</span>
+                                <span class="tag">#siber-güvenlik</span>
+                                <span class="tag">#manipülasyon</span>
+                                <span class="tag">#korunma</span>
+                            </div>
+                            <br>
+                            <div class="article-navigation">
+                                <a href="index.html" class="nav-btn">
+                                    <i class="fas fa-list"></i> Tüm Yazılar
+                                </a>
+                                <a href="../index.html#contact" class="nav-btn">
+                                    <i class="fas fa-comments"></i> Yorum Yap
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../js/matrix.js"></script>
+    <script>
+        // Syntax highlighting
+        document.addEventListener('DOMContentLoaded', (event) => {
+            hljs.highlightAll();
+        });
+
+        // Reading progress bar
+        window.addEventListener('scroll', () => {
+            const article = document.querySelector('.article-content');
+            const scrolled = window.scrollY;
+            const articleHeight = article.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const progress = (scrolled / (articleHeight - windowHeight)) * 100;
+            
+            // Update progress if needed
+            if (progress >= 0 && progress <= 100) {
+                document.title = `📖 ${Math.round(progress)}% - Sosyal Mühendislikte Siber Suçların Maskesi`;
+            }
+        });
+    </script>
+</body>
+</html>

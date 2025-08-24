@@ -1,0 +1,74 @@
+Sosyal Mühendislikte Siber Suçların Maskesi
+Sosyal Mühendislik Nedir?
+Sosyal mühendislik, en basit ifadeyle insanları manipüle ederek güvenlik önlemlerini aşma sanatıdır. Saldırganlar, teknik yöntemlerden çok psikolojik manipülasyon kullanarak hedeflerini aldatır ve bilgi edinmeye çalışır. Hedef kitle geniş çaplı bir grup olabileceği gibi, tamamen bireysel bir kişiyi de kapsayabilir.
+
+Sosyal mühendislik saldırılarının temel amacı, kişisel verilere, sistemlere veya yetkisiz erişimin mümkün olmadığı bir alana erişmektir. Bunu başarmak için saldırganlar, kurbanlarını ikna edici senaryolarla kandırır ve onların farkında olmadan güvenlik açıklarını açığa çıkarmalarını sağlar. Örneğin, bir saldırgan kendisini banka görevlisi gibi tanıtarak kişinin hesap bilgilerini ele geçirebilir veya bir şirket çalışanını e-posta yoluyla yanıltarak zararlı bir dosya indirmesini sağlayabilir.
+
+Önemli bir nokta da sosyal mühendisliğin doğrudan bir siber saldırı türü olmamasıdır. Daha çok, farklı saldırı türlerini destekleyen bir yöntem veya taktik olarak kullanılır.
+
+
+
+Sosyal Mühendislik Teknikleri Nelerdir?
+
+🔹 Baiting (Yemleme): İnsanların merak duygusunu istismar eden bir saldırı türüdür. Örneğin, bir çalışanın masasına “Özel Dosyalar” yazılı bir USB bellek bırakılır. Kurban, içeriği merak edip belleği bilgisayara taktığında zararlı yazılım çalışır ve saldırgana erişim sağlanmış olur.
+
+🔹 Phishing (Oltalama): Geniş çaplı bir saldırı olup, saldırganlar sahte e-postalar veya mesajlar ile kurbanları kandırarak kişisel bilgilerini ele geçirmeye çalışır. Genellikle sahte bir web sitesine yönlendiren bağlantılar içerir. Kurban bağlantıya tıklayıp giriş yaptığında bilgileri doğrudan saldırgana aktarılmış olur.
+
+🔹 Spear Phishing (Hedefli Oltalama): Oltalama saldırılarının daha gelişmiş ve kişiye özel versiyonudur. Saldırgan, hedefinin adı, ilgi alanları veya çalıştığı şirket hakkında bilgi toplayarak daha ikna edici bir mesaj hazırlar. Böylece kurban, saldırganın güvenilir biri olduğuna inanır.
+
+🔹 Impersonation (Kimlik Taklidi): Saldırgan, güvenilir bir kişi veya kurum gibi davranarak hedefini kandırmaya çalışır. Örneğin, sahte bir banka çalışanı gibi davranarak kişisel bilgileri ele geçirebilir veya bir web sitesinin birebir kopyasını yaparak kurbanı yanıltabilir.
+
+🔹 Watering Hole (Sulama Deliği Saldırısı): Bu saldırı, güvenilir internet sitelerini hedef alarak zararlı yazılımlar yerleştirme prensibine dayanır. Kullanıcılar, her zaman ziyaret ettikleri bir siteye girdiklerinde, farkında olmadan virüslü dosyalar indirir ve sistemleri ele geçirilebilir.
+
+🔹 Vishing (Sesli Oltalama): Baiting ve kimlik taklidine benzer olsa da telefon görüşmesi yoluyla gerçekleştirilir. Saldırgan, güvenilir bir kişi gibi davranarak hedefinden bilgi almaya çalışır. Genellikle banka hesap bilgilerini ele geçirmek için kullanılır.
+
+Sosyal Mühendislikten Korunma Yolları
+🔸 1) Farkındalık ve Eğitim:
+Hem bireysel hem kurumsal düzeyde, sosyal mühendislik saldırılarına karşı eğitim programları düzenlemek büyük önem taşır. Çalışanlar ve bireyler, olası tehditleri tanıyıp bilinçli hareket ederse, bu tür saldırıların başarı oranı düşer.
+
+🔸 2) Şüpheci ve Dikkatli Olmak:
+Şüpheli e-postalar, telefon aramaları veya bilinmeyen bağlantılar her zaman risk taşır. Kurum içinden gelmiş gibi görünen, ancak içeriği şüpheli mesajlara dikkat etmek ve gönderenin kimliğini doğrulamadan bilgi paylaşmamak önemlidir.
+
+🔸 3) Güçlü ve Güncellenmiş Şifreler Kullanmak:
+Zayıf ve tahmin edilebilir şifreler, saldırganların işini kolaylaştırır. Güçlü şifreler oluşturmak, belirli aralıklarla değiştirmek ve her hesap için farklı şifreler kullanmak güvenliği artırır. Mümkünse iki faktörlü kimlik doğrulama (2FA) kullanılmalıdır.
+🔸 4) Sosyal Medya Paylaşımlarına Dikkat Etmek:
+Saldırganlar, sosyal medya hesaplarından paylaşılan bilgilerle kişiye özel saldırı senaryoları oluşturabilir. Çalıştığınız yer, seyahat planlarınız veya kişisel ilgi alanlarınız gibi bilgileri herkesle paylaşmamak, olası saldırıların önüne geçebilir.
+
+🔸 5) Güncel ve Etkili Güvenlik Yazılımları Kullanmak:
+Antivirüs programları, güvenlik duvarları ve kötü amaçlı yazılım tarayıcıları, sistemlerinizi birçok saldırıdan koruyabilir. Ancak bu yazılımların güncel olması büyük önem taşır. Güncellenmemiş bir güvenlik yazılımı, yeni tehditlere karşı savunmasız kalabilir.
+
+🔸 6) Bildirim ve İhbar Mekanizmaları Kurmak:
+Özellikle kurumsal yapılar için, çalışanların şüpheli durumları bildirebileceği bir ihbar mekanizması oluşturmak, saldırılara karşı hızlı önlem alınmasını sağlar. Çalışanlardan gelen şüpheli e-posta veya çağrı ihbarları, olası büyük saldırıların önüne geçebilir.
+
+Sonuç
+Sosyal mühendislik, insan psikolojisini hedef alan siber saldırıların en tehlikeli türlerinden biridir. Saldırganlar, güvenlik açıklarını teknik yollarla değil, insanların zaaflarını kullanarak aşmaya çalışır. Baiting, phishing, spear phishing, impersonation, watering hole ve vishing gibi tekniklerle bireyler ve kurumlar hedef alınabilir.
+
+Bu tür saldırılardan korunmanın en etkili yolu, bilinçlenmek, şüpheci olmak ve güçlü güvenlik önlemleri almaktır. Eğitimler, güvenli parola kullanımı, sosyal medya paylaşımlarına dikkat etmek ve güvenlik yazılımlarını güncel tutmak, sosyal mühendislik saldırılarına karşı önemli birer kalkandır. Unutmayın, teknoloji ne kadar gelişirse gelişsin, insan faktörü en büyük güvenlik açığıdır.
+
+
+
+Kaynakça
+1-Kaspersky. (n.d.). How to avoid social engineering attacks?
+
+2-Karel. (n.d.). Sosyal mühendislik saldırıları nedir, korunma yöntemleri nelerdir? https://www.karel.com.tr/blog/sosyal-muhendislik-saldirisi-nedir-korunma-yontemleri-nelerdir
+
+3-Berqnet. (n.d.). Sosyal mühendislik saldırıları ve korunma yolları. Erişim Linki
+
+4-Siberay. (n.d.). Sosyal mühendislik nedir? Erişim Linki
+
+5-Garanti BBVA. (n.d.). Sosyal mühendislik saldırıları ve korunma yöntemleri.
+
+6-ChatGPT — OpenAI, 2025
+
+7-İş Bankası. (n.d.). Sosyal mühendislik saldırıları nedir?
+
+
+
+
+
+
+
+
+
+
+
