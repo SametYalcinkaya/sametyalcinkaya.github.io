@@ -1491,43 +1491,44 @@ body {
 /* Back to Top Button */
 .back-to-top-btn {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.8);
+    bottom: 80px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.9);
     border: 2px solid var(--primary-green);
     border-radius: 50%;
     color: var(--primary-green);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     cursor: pointer;
     z-index: 1000;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(100px);
-    box-shadow: 0 4px 20px rgba(0, 255, 0, 0.2);
+    transform: translateX(50%) translateY(100px);
+    box-shadow: 0 6px 25px rgba(0, 255, 0, 0.3);
 }
 
 .back-to-top-btn.show {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateX(50%) translateY(0);
 }
 
 .back-to-top-btn:hover {
-    background: rgba(0, 255, 0, 0.1);
+    background: rgba(0, 255, 0, 0.15);
     border-color: #fff;
     color: #fff;
-    transform: translateY(-3px) scale(1.05);
+    transform: translateX(50%) translateY(-5px) scale(1.1);
     box-shadow: 
-        0 8px 30px rgba(0, 255, 0, 0.4),
-        0 0 20px rgba(0, 255, 0, 0.6);
+        0 10px 35px rgba(0, 255, 0, 0.5),
+        0 0 25px rgba(0, 255, 0, 0.7);
 }
 
 .back-to-top-btn:active {
-    transform: translateY(-1px) scale(0.98);
+    transform: translateX(50%) translateY(-2px) scale(0.95);
 }
 
 .back-to-top-btn .btn-tooltip {
@@ -1569,11 +1570,10 @@ body {
 /* Mobile responsive for back-to-top */
 @media (max-width: 768px) {
     .back-to-top-btn {
-        bottom: 1rem;
-        right: 1rem;
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
+        bottom: 60px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
     }
     
     .back-to-top-btn .btn-tooltip {

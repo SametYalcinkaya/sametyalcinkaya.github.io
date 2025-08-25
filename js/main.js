@@ -905,19 +905,18 @@ function initBackToTop() {
         }
     }
     
-    // Smooth scroll to top with animation
+    // Fast smooth scroll to top with animation
     function scrollToTop() {
-        const scrollDuration = 800;
-        const scrollStep = -window.scrollY / (scrollDuration / 15);
+        // Use modern smooth scroll API for instant, smooth animation
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
         
-        const scrollInterval = setInterval(() => {
-            if (window.scrollY !== 0) {
-                window.scrollBy(0, scrollStep);
-            } else {
-                clearInterval(scrollInterval);
-                showTerminalFeedback('Back to top - Command executed successfully!');
-            }
-        }, 15);
+        // Add terminal feedback after a short delay
+        setTimeout(() => {
+            showTerminalFeedback('⬆️ Back to top - Command executed successfully!', 'success');
+        }, 300);
     }
     
     // Throttled scroll event for performance
@@ -939,11 +938,11 @@ function initBackToTop() {
         e.preventDefault();
         scrollToTop();
         
-        // Add click animation
-        backToTopBtn.style.transform = 'translateY(-1px) scale(0.95)';
+        // Add enhanced click animation for centered button
+        backToTopBtn.style.transform = 'translateX(50%) translateY(-2px) scale(0.9)';
         setTimeout(() => {
-            backToTopBtn.style.transform = '';
-        }, 150);
+            backToTopBtn.style.transform = 'translateX(50%) translateY(0)';
+        }, 200);
     });
     
     // Keyboard accessibility (Enter and Space)
