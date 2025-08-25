@@ -388,7 +388,160 @@ body {
   transform: translateX(5px);
 }
 
-/* ===== HERO ACTIONS ===== */
+/* ===== FLOATING ACTION BUTTONS ===== */
+.floating-actions {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  z-index: 1500;
+}
+
+.fab-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  border: 2px solid;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.fab-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: currentColor;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all var(--transition-fast);
+  opacity: 0.1;
+}
+
+.fab-btn:hover::before,
+.fab-btn:active::before {
+  width: 100%;
+  height: 100%;
+}
+
+.fab-contact {
+  color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+.fab-contact:hover {
+  color: var(--bg-black);
+  background: var(--primary-green);
+  border-color: var(--primary-green);
+  box-shadow: 
+    0 6px 25px rgba(0, 255, 0, 0.4),
+    0 0 20px rgba(0, 255, 0, 0.6);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.fab-cv {
+  color: var(--neon-blue);
+  border-color: var(--neon-blue);
+}
+
+.fab-cv:hover {
+  color: var(--bg-black);
+  background: var(--neon-blue);
+  border-color: var(--neon-blue);
+  box-shadow: 
+    0 6px 25px rgba(0, 255, 255, 0.4),
+    0 0 20px rgba(0, 255, 255, 0.6);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.fab-btn:active {
+  transform: scale(0.95);
+}
+
+/* Tooltip for FAB buttons */
+.fab-btn::after {
+  content: attr(title);
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: var(--text-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+  margin-right: var(--spacing-sm);
+  border: 1px solid currentColor;
+  font-family: var(--font-mono);
+  pointer-events: none;
+}
+
+.fab-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(-5px);
+}
+
+/* Mobile responsive for floating buttons */
+@media (max-width: 768px) {
+  .floating-actions {
+    bottom: 15px;
+    right: 15px;
+    gap: var(--spacing-xs);
+  }
+  
+  .fab-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
+  }
+  
+  .fab-btn::after {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-actions {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .fab-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+  
+  .fab-btn::after {
+    display: none; /* Hide tooltips on very small screens */
+  }
+}
+
+/* ===== HERO ACTIONS (LEGACY - Remove if not used) ===== */
 .hero-actions {
   display: flex;
   gap: var(--spacing-md);

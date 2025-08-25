@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Debug: Check if key elements exist
     const cvButton = document.getElementById('view-cv-btn');
-    const contactButton = document.querySelector('a[href="#contact"]');
-    const heroActions = document.querySelector('.hero-actions');
+    const contactButton = document.querySelector('.fab-contact');
+    const heroActions = document.querySelector('.floating-actions');
     
     console.log('Key elements found:', {
         cvButton: !!cvButton,
         contactButton: !!contactButton,
-        heroActions: !!heroActions
+        floatingActions: !!heroActions
     });
     
     if (cvButton) {
@@ -128,12 +128,12 @@ function initNavigation() {
 // ===== SMOOTH SCROLLING =====
 function initSmoothScrolling() {
     const navLinks = document.querySelectorAll('a[href^="#"]');
-    const heroActions = document.querySelectorAll('.hero-actions a[href^="#"]');
+    const floatingButtons = document.querySelectorAll('.fab-btn[href^="#"]');
     
-    console.log('Initializing smooth scrolling for', navLinks.length + heroActions.length, 'links');
+    console.log('Initializing smooth scrolling for', navLinks.length + floatingButtons.length, 'links');
     
-    [...navLinks, ...heroActions].forEach((link, index) => {
-        console.log(`Setting up link ${index}:`, link.href, link.textContent.trim());
+    [...navLinks, ...floatingButtons].forEach((link, index) => {
+        console.log(`Setting up link ${index}:`, link.href, link.title || link.textContent.trim());
         
         // Function to handle the navigation
         function handleNavigation(e) {
@@ -187,7 +187,7 @@ function initSmoothScrolling() {
     });
     
     // Enhanced mobile button interaction
-    const allButtons = document.querySelectorAll('.btn');
+    const allButtons = document.querySelectorAll('.btn, .fab-btn');
     console.log('Setting up button interactions for', allButtons.length, 'buttons');
     
     allButtons.forEach((button, index) => {
