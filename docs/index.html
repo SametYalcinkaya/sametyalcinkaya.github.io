@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dökümanlar | Hıdır Samet Yalçınkaya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --matrix-green: #00FF00;
+            --dark-bg: #0d1117;
+            --darker-bg: #010409;
+            --terminal-bg: rgba(13, 17, 23, 0.95);
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --neon-blue: #58a6ff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Fira Code', monospace;
+            background: var(--darker-bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        #matrix-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-back {
+            display: inline-block;
+            color: var(--matrix-green);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border: 1px solid var(--matrix-green);
+            padding: 8px 16px;
+            background: rgba(0, 255, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-back:hover {
+            background: rgba(0, 255, 0, 0.2);
+            box-shadow: 0 0 10px var(--matrix-green);
+        }
+
+        .section-title {
+            color: var(--matrix-green);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px var(--matrix-green);
+        }
+
+        .terminal-window {
+            background: var(--terminal-bg);
+            border: 2px solid var(--matrix-green);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .terminal-header {
+            background: linear-gradient(90deg, var(--matrix-green), rgba(0, 255, 0, 0.7));
+            color: var(--darker-bg);
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 6px 6px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .terminal-buttons {
+            display: flex;
+            gap: 5px;
+        }
+
+        .terminal-buttons span {
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            background: var(--darker-bg);
+        }
+
+        .terminal-title {
+            flex: 1;
+            text-align: center;
+        }
+
+        .terminal-body {
+            padding: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .prompt {
+            color: var(--matrix-green);
+            margin-bottom: 15px;
+        }
+
+        .file-tree {
+            font-family: 'Fira Code', monospace;
+            color: var(--text-primary);
+        }
+
+        .tree-line {
+            margin: 2px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .file-link {
+            color: var(--neon-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .file-link:hover {
+            color: var(--matrix-green);
+            text-shadow: 0 0 5px var(--matrix-green);
+        }
+
+        .folder-name {
+            color: var(--matrix-green);
+            font-weight: bold;
+        }
+
+        .file-size {
+            color: var(--text-secondary);
+            font-size: 12px;
+            margin-left: auto;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 10px; }
+            .terminal-body { padding: 15px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    
+    <div class="container">
+        <a href="../index.html" class="nav-back">
+            <i class="fas fa-arrow-left"></i> Ana Sayfaya Dön
+        </a>
+        
+        <h1 class="section-title">📄 Dökümanlar</h1>
+        
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="terminal-title">DOCUMENTS_TREE v1.0 | file-manager@docs</div>
+            </div>
+            <div class="terminal-body">
+                <div class="prompt">root@samet-portfolio:~/docs$ tree -h --download</div>
+                <div class="file-tree">
+                    <div class="tree-line">📁 docs/</div>
+                    <div class="tree-line">├── 📄 <a href="Hıdır_SAMET-CV.pdf" class="file-link" download>Hıdır_SAMET-CV.pdf</a> <span class="file-size">(363 KB)</span></div>
+                    <div class="tree-line">├── 📁 <span class="folder-name">Bilgi_Toplama/</span></div>
+                    <div class="tree-line">│   ├── 📁 Amazon_Kitap/</div>
+                    <div class="tree-line">│   │   ├── 📁 kaynak_kodlar/</div>
+                    <div class="tree-line">│   │   │   ├── ⚙️ <a href="Bilgi Toplama/Amazon_Kitap/kaynak kodlar/chromedriver.exe" class="file-link" download>chromedriver.exe</a> <span class="file-size">(18.5 MB)</span></div>
+                    <div class="tree-line">│   │   │   ├── 🐍 <a href="Bilgi Toplama/Amazon_Kitap/kaynak kodlar/dashboard.py" class="file-link" download>dashboard.py</a> <span class="file-size">(5.8 KB)</span></div>
+                    <div class="tree-line">│   │   │   ├── 🐍 <a href="Bilgi Toplama/Amazon_Kitap/kaynak kodlar/donustur.py" class="file-link" download>donustur.py</a> <span class="file-size">(1.5 KB)</span></div>
+                    <div class="tree-line">│   │   │   ├── 🐍 <a href="Bilgi Toplama/Amazon_Kitap/kaynak kodlar/kodum.py" class="file-link" download>kodum.py</a> <span class="file-size">(3.7 KB)</span></div>
+                    <div class="tree-line">│   │   │   ├── 📄 <a href="Bilgi Toplama/Amazon_Kitap/kaynak kodlar/veri.json" class="file-link" download>veri.json</a> <span class="file-size">(13.0 KB)</span></div>
+                    <div class="tree-line">│   │   │   └── 📝 <a href="Bilgi Toplama/Amazon_Kitap/kaynak kodlar/veri.txt" class="file-link" download>veri.txt</a> <span class="file-size">(11.5 KB)</span></div>
+                    <div class="tree-line">│   │   └── 📁 sunum/</div>
+                    <div class="tree-line">│   │       ├── 📄 <a href="Bilgi Toplama/Amazon_Kitap/sunum/hıdır_samet_yalcınkaya.pdf" class="file-link" download>hıdır_samet_yalcınkaya.pdf</a> <span class="file-size">(3.4 MB)</span></div>
+                    <div class="tree-line">│   │       └── 🎥 <a href="Bilgi Toplama/Amazon_Kitap/sunum/videoo.mp4" class="file-link" download>videoo.mp4</a> <span class="file-size">(21.2 MB)</span></div>
+                    <div class="tree-line">│   ├── 📁 ekşi_sözlük/</div>
+                    <div class="tree-line">│   │   ├── 📝 <a href="Bilgi Toplama/ekşi_sözlük/anneler_gunu_entryler.txt" class="file-link" download>anneler_gunu_entryler.txt</a> <span class="file-size">(59.4 KB)</span></div>
+                    <div class="tree-line">│   │   └── 🐍 <a href="Bilgi Toplama/ekşi_sözlük/kod.py" class="file-link" download>kod.py</a> <span class="file-size">(1.5 KB)</span></div>
+                    <div class="tree-line">│   └── 📁 instagram_takipci/</div>
+                    <div class="tree-line">│       └── 🐍 <a href="Bilgi Toplama/instagram_takipci/instagram.py" class="file-link" download>instagram.py</a> <span class="file-size">(2.8 KB)</span></div>
+                    <div class="tree-line">├── 📁 <span class="folder-name">Cisco/</span></div>
+                    <div class="tree-line">│   └── 📁 certifika/</div>
+                    <div class="tree-line">│       ├── 📜 <a href="Cisco/certifika/Hidir SametYalcinkaya-SGA1 - Siber Güv-certificate.pdf" class="file-link" download>SGA1-Siber_Güvenlik.pdf</a> <span class="file-size">(85 KB)</span></div>
+                    <div class="tree-line">│       ├── 📜 <a href="Cisco/certifika/Hidir SametYalcinkaya-SGA2 - Linux Gir-certificate.pdf" class="file-link" download>SGA2-Linux.pdf</a> <span class="file-size">(216 KB)</span></div>
+                    <div class="tree-line">│       ├── 📜 <a href="Cisco/certifika/Hidir SametYalcinkaya-SGA3 - CCNA1 - B-certificate.pdf" class="file-link" download>SGA3-CCNA1.pdf</a> <span class="file-size">(86 KB)</span></div>
+                    <div class="tree-line">│       └── 📜 <a href="Cisco/certifika/Hidir SametYalcinkaya-SGA4 - CYBEROPS -certificate (2).pdf" class="file-link" download>SGA4-CyberOps.pdf</a> <span class="file-size">(77 KB)</span></div>
+                    <div class="tree-line">├── 📁 <span class="folder-name">Gezgin_Satıcı/</span></div>
+                    <div class="tree-line">│   ├── 📊 <a href="Gezgin_Satıcı/KA10.m" class="file-link" download>KA10.m</a> <span class="file-size">(5.3 KB)</span></div>
+                    <div class="tree-line">│   ├── 📈 <a href="Gezgin_Satıcı/mesafe.xlsx" class="file-link" download>mesafe.xlsx</a> <span class="file-size">(54.3 KB)</span></div>
+                    <div class="tree-line">│   └── 📈 <a href="Gezgin_Satıcı/mesafe1.xlsx" class="file-link" download>mesafe1.xlsx</a> <span class="file-size">(44.1 KB)</span></div>
+                    <div class="tree-line">├── 📁 <span class="folder-name">Kriptoloji/</span></div>
+                    <div class="tree-line">│   ├── 🔒 <a href="Kriptoloji/kriptoloji1.cpp" class="file-link" download>kriptoloji1.cpp</a> <span class="file-size">(1.0 KB)</span></div>
+                    <div class="tree-line">│   ├── 🔒 <a href="Kriptoloji/kriptoloji2.cpp" class="file-link" download>kriptoloji2.cpp</a> <span class="file-size">(1.4 KB)</span></div>
+                    <div class="tree-line">│   ├── 🔒 <a href="Kriptoloji/kriptoloji3.cpp" class="file-link" download>kriptoloji3.cpp</a> <span class="file-size">(0.8 KB)</span></div>
+                    <div class="tree-line">│   └── 📁 des/</div>
+                    <div class="tree-line">│       ├── 📄 <a href="Kriptoloji/des/Makefile.win" class="file-link" download>Makefile.win</a> <span class="file-size">(1.1 KB)</span></div>
+                    <div class="tree-line">│       ├── 📄 <a href="Kriptoloji/des/Project2.dev" class="file-link" download>Project2.dev</a> <span class="file-size">(1.0 KB)</span></div>
+                    <div class="tree-line">│       ├── ⚙️ <a href="Kriptoloji/des/Project2.exe" class="file-link" download>Project2.exe</a> <span class="file-size">(1.9 MB)</span></div>
+                    <div class="tree-line">│       ├── 📄 <a href="Kriptoloji/des/Project2.layout" class="file-link" download>Project2.layout</a> <span class="file-size">(0.2 KB)</span></div>
+                    <div class="tree-line">│       ├── 🔧 <a href="Kriptoloji/des/des_utils.h" class="file-link" download>des_utils.h</a> <span class="file-size">(3.5 KB)</span></div>
+                    <div class="tree-line">│       ├── 🔐 <a href="Kriptoloji/des/main.cpp" class="file-link" download>main.cpp</a> <span class="file-size">(3.1 KB)</span></div>
+                    <div class="tree-line">│       ├── ⚙️ <a href="Kriptoloji/des/main.exe" class="file-link" download>main.exe</a> <span class="file-size">(1.3 MB)</span></div>
+                    <div class="tree-line">│       └── 📄 <a href="Kriptoloji/des/main.o" class="file-link" download>main.o</a> <span class="file-size">(20.4 KB)</span></div>
+                    <div class="tree-line">├── 📁 <span class="folder-name">Veri_Yapıları/</span></div>
+                    <div class="tree-line">│   ├── 🗂️ <a href="Veri_Yapıları/Kuyrukyapısıveriyapıları.cpp" class="file-link" download>Kuyruk_Yapısı.cpp</a> <span class="file-size">(3.2 KB)</span></div>
+                    <div class="tree-line">│   └── 🌳 <a href="Veri_Yapıları/TreeAgacyapısı.cpp" class="file-link" download>Tree_Ağaç_Yapısı.cpp</a> <span class="file-size">(9.5 KB)</span></div>
+                    <div class="tree-line">├── 📁 <span class="folder-name">Yapay_Zeka/</span></div>
+                    <div class="tree-line">│   ├── 🎯 <a href="Yapay_Zeka/Knn.m" class="file-link" download>Knn.m</a> <span class="file-size">(0.5 KB)</span></div>
+                    <div class="tree-line">│   ├── 🧠 <a href="Yapay_Zeka/LeNet.m" class="file-link" download>LeNet.m</a> <span class="file-size">(0.6 KB)</span></div>
+                    <div class="tree-line">│   ├── 🧠 <a href="Yapay_Zeka/LeNetMain.m" class="file-link" download>LeNetMain.m</a> <span class="file-size">(0.2 KB)</span></div>
+                    <div class="tree-line">│   ├── 🧠 <a href="Yapay_Zeka/LeNext.m" class="file-link" download>LeNext.m</a> <span class="file-size">(0.6 KB)</span></div>
+                    <div class="tree-line">│   ├── 📊 <a href="Yapay_Zeka/batchN.m" class="file-link" download>batchN.m</a> <span class="file-size">(0.2 KB)</span></div>
+                    <div class="tree-line">│   ├── 🔄 <a href="Yapay_Zeka/konv.m" class="file-link" download>konv.m</a> <span class="file-size">(0.3 KB)</span></div>
+                    <div class="tree-line">│   ├── 🔄 <a href="Yapay_Zeka/konvulas.m" class="file-link" download>konvulas.m</a> <span class="file-size">(0.5 KB)</span></div>
+                    <div class="tree-line">│   ├── 📊 <a href="Yapay_Zeka/layerN.m" class="file-link" download>layerN.m</a> <span class="file-size">(0.2 KB)</span></div>
+                    <div class="tree-line">│   └── 📊 <a href="Yapay_Zeka/max_pooling.m" class="file-link" download>max_pooling.m</a> <span class="file-size">(0.4 KB)</span></div>
+                    <div class="tree-line">├── 📁 <span class="folder-name">makine_çözümleri/</span></div>
+                    <div class="tree-line">│   ├── 📋 <a href="makine_çözümleri/Bulldog2.pdf" class="file-link" download>Bulldog2.pdf</a> <span class="file-size">(2.5 MB)</span></div>
+                    <div class="tree-line">│   └── 🐙 <a href="makine_çözümleri/Kraken.pdf" class="file-link" download>Kraken.pdf</a> <span class="file-size">(3.4 MB)</span></div>
+                    <div class="tree-line">└── 📁 <span class="folder-name">siberkit/</span></div>
+                    <div class="tree-line">    ├── 🐍 <a href="siberkit/main.py" class="file-link" download>main.py</a> <span class="file-size">(2.6 KB)</span></div>
+                    <div class="tree-line">    ├── 📖 <a href="siberkit/README.txt" class="file-link" download>README.txt</a> <span class="file-size">(1.2 KB)</span></div>
+                    <div class="tree-line">    ├── 📋 <a href="siberkit/requirements.txt" class="file-link" download>requirements.txt</a> <span class="file-size">(0.1 KB)</span></div>
+                    <div class="tree-line">    └── 📁 service/</div>
+                    <div class="tree-line">        ├── 🔓 <a href="siberkit/service/bruteforce_ssh.py" class="file-link" download>bruteforce_ssh.py</a> <span class="file-size">(1.7 KB)</span></div>
+                    <div class="tree-line">        ├── 📂 <a href="siberkit/service/dirscanner.py" class="file-link" download>dirscanner.py</a> <span class="file-size">(2.3 KB)</span></div>
+                    <div class="tree-line">        ├── 🌐 <a href="siberkit/service/dns_lookup.py" class="file-link" download>dns_lookup.py</a> <span class="file-size">(1.4 KB)</span></div>
+                    <div class="tree-line">        ├── ⚡ <a href="siberkit/service/dosattack.py" class="file-link" download>dosattack.py</a> <span class="file-size">(1.9 KB)</span></div>
+                    <div class="tree-line">        ├── 🔧 <a href="siberkit/service/mac_changer.py" class="file-link" download>mac_changer.py</a> <span class="file-size">(1.6 KB)</span></div>
+                    <div class="tree-line">        ├── 🔍 <a href="siberkit/service/network_scaner.py" class="file-link" download>network_scaner.py</a> <span class="file-size">(1.2 KB)</span></div>
+                    <div class="tree-line">        ├── 🗺️ <a href="siberkit/service/nmapscanner.py" class="file-link" download>nmapscanner.py</a> <span class="file-size">(2.1 KB)</span></div>
+                    <div class="tree-line">        ├── 📡 <a href="siberkit/service/packet_sniffer.py" class="file-link" download>packet_sniffer.py</a> <span class="file-size">(0.8 KB)</span></div>
+                    <div class="tree-line">        ├── 🚪 <a href="siberkit/service/port_scaner.py" class="file-link" download>port_scaner.py</a> <span class="file-size">(0.9 KB)</span></div>
+                    <div class="tree-line">        ├── 🔍 <a href="siberkit/service/snmpwalk.py" class="file-link" download>snmpwalk.py</a> <span class="file-size">(1.1 KB)</span></div>
+                    <div class="tree-line">        ├── 💉 <a href="siberkit/service/sqlscanner.py" class="file-link" download>sqlscanner.py</a> <span class="file-size">(1.9 KB)</span></div>
+                    <div class="tree-line">        ├── 🔍 <a href="siberkit/service/subdomainfinder.py" class="file-link" download>subdomainfinder.py</a> <span class="file-size">(1.5 KB)</span></div>
+                    <div class="tree-line">        ├── 🛤️ <a href="siberkit/service/traceroute.py" class="file-link" download>traceroute.py</a> <span class="file-size">(1.0 KB)</span></div>
+                    <div class="tree-line">        └── 🔒 <a href="siberkit/service/vpnchecker.py" class="file-link" download>vpnchecker.py</a> <span class="file-size">(1.0 KB)</span></div>
+                </div>
+                <div class="prompt">root@samet-portfolio:~/docs$ echo "Tüm dosyalar indirilebilir!"</div>
+                <div style="color: var(--matrix-green);">Tüm dosyalar indirilebilir!</div>
+                <div class="prompt">root@samet-portfolio:~/docs$ _</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Matrix Rain Effect
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const letters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz日本語カタカナひらがな';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function draw() {
+            ctx.fillStyle = 'rgba(1, 4, 9, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00FF00';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 50);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // File download feedback
+        document.addEventListener('DOMContentLoaded', () => {
+            const fileLinks = document.querySelectorAll('.file-link');
+            
+            fileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const fileName = link.textContent.trim();
+                    const feedback = document.createElement('div');
+                    feedback.style.cssText = `
+                        position: fixed; top: 20px; right: 20px;
+                        background: rgba(0, 255, 0, 0.1);
+                        border: 1px solid var(--matrix-green);
+                        color: var(--matrix-green);
+                        padding: 10px 15px; border-radius: 5px;
+                        font-family: 'Fira Code', monospace;
+                        font-size: 12px; z-index: 1000;
+                        opacity: 0; transition: opacity 0.3s ease;
+                    `;
+                    feedback.textContent = `✓ ${fileName} indiriliyor...`;
+                    
+                    document.body.appendChild(feedback);
+                    setTimeout(() => feedback.style.opacity = '1', 100);
+                    setTimeout(() => {
+                        feedback.style.opacity = '0';
+                        setTimeout(() => feedback.remove(), 300);
+                    }, 3000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
