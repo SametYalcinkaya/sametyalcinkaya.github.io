@@ -1,5 +1,27 @@
 // Main JavaScript file for cybersecurity portfolio
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM Content Loaded - Initializing components...');
+    
+    // Debug: Check if key elements exist
+    const cvButton = document.getElementById('view-cv-btn');
+    const contactButton = document.querySelector('a[href="#contact"]');
+    const heroActions = document.querySelector('.hero-actions');
+    
+    console.log('Key elements found:', {
+        cvButton: !!cvButton,
+        contactButton: !!contactButton,
+        heroActions: !!heroActions
+    });
+    
+    if (cvButton) {
+        console.log('CV Button details:', {
+            id: cvButton.id,
+            text: cvButton.textContent.trim(),
+            href: cvButton.href,
+            classList: cvButton.classList.toString()
+        });
+    }
+    
     // Initialize all components
     initNavigation();
     initSmoothScrolling();
@@ -12,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initPerformanceOptimizations();
     initBackToTop();
     initLoadingScreen();
+    
+    console.log('All components initialized');
 });
 
 // ===== NAVIGATION SYSTEM =====
@@ -106,50 +130,83 @@ function initSmoothScrolling() {
     const navLinks = document.querySelectorAll('a[href^="#"]');
     const heroActions = document.querySelectorAll('.hero-actions a[href^="#"]');
     
-    [...navLinks, ...heroActions].forEach(link => {
-        // Add multiple event listeners for better mobile support
-        const events = ['click', 'touchend'];
+    console.log('Initializing smooth scrolling for', navLinks.length + heroActions.length, 'links');
+    
+    [...navLinks, ...heroActions].forEach((link, index) => {
+        console.log(`Setting up link ${index}:`, link.href, link.textContent.trim());
         
-        events.forEach(eventType => {
-            link.addEventListener(eventType, (e) => {
-                // Prevent double firing
-                if (eventType === 'touchend') {
-                    e.preventDefault();
+        // Function to handle the navigation
+        function handleNavigation(e) {
+            const targetId = link.getAttribute('href');
+            console.log('Navigation triggered for:', targetId);
+            
+            // Skip if href is just '#' or empty
+            if (!targetId || targetId === '#' || targetId.length <= 1) {
+                console.log('Skipping navigation - invalid target');
+                return;
+            }
+            
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                
+                console.log('Scrolling to:', targetId, 'offset:', offsetTop);
+                
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+                
+                // Terminal-style navigation feedback
+                showTerminalFeedback(`Navigating to ${targetId}...`);
+            } else {
+                console.log('Target section not found:', targetId);
+            }
+        }
+        
+        // Add multiple event listeners for better support
+        link.addEventListener('click', handleNavigation);
+        
+        // For touch devices
+        link.addEventListener('touchend', function(e) {
+            // Small delay to prevent double-firing with click
+            setTimeout(() => {
+                if (!e.defaultPrevented) {
+                    handleNavigation(e);
                 }
-                
-                const targetId = link.getAttribute('href');
-                
-                // Skip if href is just '#' or empty
-                if (!targetId || targetId === '#' || targetId.length <= 1) {
-                    return;
-                }
-                
-                const targetSection = document.querySelector(targetId);
-                
-                if (targetSection) {
-                    const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
-                    
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Terminal-style navigation feedback
-                    showTerminalFeedback(`Navigating to ${targetId}...`);
-                }
-            }, { passive: false });
+            }, 10);
         });
+        
+        // Ensure link is clickable
+        link.style.pointerEvents = 'auto';
+        link.style.cursor = 'pointer';
     });
     
     // Enhanced mobile button interaction
     const allButtons = document.querySelectorAll('.btn');
-    allButtons.forEach(button => {
+    console.log('Setting up button interactions for', allButtons.length, 'buttons');
+    
+    allButtons.forEach((button, index) => {
+        console.log(`Setting up button ${index}:`, button.textContent.trim());
+        
+        // Ensure button is properly styled
+        button.style.pointerEvents = 'auto';
+        button.style.cursor = 'pointer';
+        button.style.position = 'relative';
+        button.style.zIndex = '100';
+        
         // Add visual feedback for touch
-        button.addEventListener('touchstart', () => {
+        button.addEventListener('touchstart', (e) => {
+            console.log('Button touchstart:', button.textContent.trim());
             button.style.transform = 'scale(0.98)';
         }, { passive: true });
         
-        button.addEventListener('touchend', () => {
+        button.addEventListener('touchend', (e) => {
+            console.log('Button touchend:', button.textContent.trim());
             setTimeout(() => {
                 button.style.transform = '';
             }, 150);
@@ -158,6 +215,10 @@ function initSmoothScrolling() {
         button.addEventListener('touchcancel', () => {
             button.style.transform = '';
         }, { passive: true });
+        
+        button.addEventListener('click', (e) => {
+            console.log('Button clicked:', button.textContent.trim(), 'href:', button.href);
+        });
     });
 }
 
@@ -370,9 +431,13 @@ function initCVModal() {
     const closeCvModalBtn = document.querySelector('.close-cv-modal');
     const cvFrame = document.getElementById('cv-frame');
     
-    if (!cvButton || !cvModal) return;
+    if (!cvButton || !cvModal) {
+        console.log('CV Modal elements not found:', { cvButton: !!cvButton, cvModal: !!cvModal });
+        return;
+    }
     
     function openCvModal() {
+        console.log('Opening CV modal');
         cvModal.classList.add('active');
         cvModal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
@@ -389,6 +454,7 @@ function initCVModal() {
     }
     
     function closeCvModal() {
+        console.log('Closing CV modal');
         cvModal.classList.remove('active');
         setTimeout(() => {
             cvModal.style.display = 'none';
@@ -401,12 +467,28 @@ function initCVModal() {
         showTerminalFeedback('$ exit');
     }
     
-    // Open CV modal when button is clicked
-    cvButton.addEventListener('click', (e) => {
+    // Multiple event listeners for better mobile support
+    function handleCvButtonClick(e) {
         e.preventDefault();
         e.stopPropagation();
+        console.log('CV button clicked');
+        openCvModal();
+    }
+    
+    // Add click and touch event listeners
+    cvButton.addEventListener('click', handleCvButtonClick);
+    cvButton.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('CV button touched');
         openCvModal();
     });
+    
+    // Ensure button is properly styled and clickable
+    cvButton.style.pointerEvents = 'auto';
+    cvButton.style.cursor = 'pointer';
+    cvButton.style.position = 'relative';
+    cvButton.style.zIndex = '1000';
     
     // Close modal events
     if (closeCvModalBtn) {
@@ -427,6 +509,8 @@ function initCVModal() {
             closeCvModal();
         }
     });
+    
+    console.log('CV Modal initialized successfully');
 }
 
 // ===== CONTACT FORM =====
