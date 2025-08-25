@@ -394,6 +394,8 @@ body {
   gap: var(--spacing-md);
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: var(--spacing-lg);
+  width: 100%;
 }
 
 .btn {
@@ -410,6 +412,11 @@ body {
   cursor: pointer;
   background: transparent;
   font-size: 1.1rem;
+  min-height: 50px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 10;
+  text-align: center;
 }
 
 .btn-primary {
@@ -1158,6 +1165,27 @@ body {
   .hero-description {
     font-size: 1rem;
   }
+    
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    width: 100%;
+  }
+    
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    min-width: 220px;
+    justify-content: center;
+    min-height: 52px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+    
+  .btn:active {
+    transform: scale(0.98);
+  }
   
   .terminal-body {
     padding: var(--spacing-sm);
@@ -1223,12 +1251,28 @@ body {
   .hero-actions {
     flex-direction: column;
     align-items: center;
+    gap: var(--spacing-lg);
+    width: 100%;
+    padding: 0 var(--spacing-md);
   }
   
   .btn {
     width: 100%;
-    max-width: 250px;
+    max-width: 280px;
+    min-width: 200px;
     justify-content: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: 1rem;
+    min-height: 56px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    position: relative;
+    z-index: 100;
+  }
+  
+  .btn:active {
+    transform: scale(0.98);
   }
   
   .specializations {
@@ -1237,6 +1281,37 @@ body {
   
   .spec-item {
     font-size: 0.9rem;
+  }
+  
+  .terminal-window {
+    margin: 0 var(--spacing-xs);
+    border-radius: var(--radius-md);
+  }
+    
+  .terminal-body {
+    padding: var(--spacing-sm);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+    
+  .terminal-line {
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+    
+  .terminal-prompt {
+    min-width: fit-content;
+    white-space: nowrap;
+  }
+  
+  .hero-name {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.5;
   }
 }
 

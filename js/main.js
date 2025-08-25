@@ -107,30 +107,57 @@ function initSmoothScrolling() {
     const heroActions = document.querySelectorAll('.hero-actions a[href^="#"]');
     
     [...navLinks, ...heroActions].forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            const targetId = link.getAttribute('href');
-            
-            // Skip if href is just '#' or empty
-            if (!targetId || targetId === '#' || targetId.length <= 1) {
-                return;
-            }
-            
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+        // Add multiple event listeners for better mobile support
+        const events = ['click', 'touchend'];
+        
+        events.forEach(eventType => {
+            link.addEventListener(eventType, (e) => {
+                // Prevent double firing
+                if (eventType === 'touchend') {
+                    e.preventDefault();
+                }
                 
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+                const targetId = link.getAttribute('href');
                 
-                // Terminal-style navigation feedback
-                showTerminalFeedback(`Navigating to ${targetId}...`);
-            }
+                // Skip if href is just '#' or empty
+                if (!targetId || targetId === '#' || targetId.length <= 1) {
+                    return;
+                }
+                
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                    
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Terminal-style navigation feedback
+                    showTerminalFeedback(`Navigating to ${targetId}...`);
+                }
+            }, { passive: false });
         });
+    });
+    
+    // Enhanced mobile button interaction
+    const allButtons = document.querySelectorAll('.btn');
+    allButtons.forEach(button => {
+        // Add visual feedback for touch
+        button.addEventListener('touchstart', () => {
+            button.style.transform = 'scale(0.98)';
+        }, { passive: true });
+        
+        button.addEventListener('touchend', () => {
+            setTimeout(() => {
+                button.style.transform = '';
+            }, 150);
+        }, { passive: true });
+        
+        button.addEventListener('touchcancel', () => {
+            button.style.transform = '';
+        }, { passive: true });
     });
 }
 
