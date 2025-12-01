@@ -220,6 +220,11 @@ MIT License - Detaylar için `LICENSE` dosyasını inceleyin.
 - **Usage Guide:** [kullanim-rehberi.md](kullanim-rehberi.md) - Site management and maintenance guide
 - **Blog/Video Guide:** [BLOG-VIDEO-GUIDE.md](BLOG-VIDEO-GUIDE.md) - Content creation and management
 - **Deployment Guide:** [DEPLOYMENT-GUIDE.md](DEPLOYMENT-GUIDE.md) - Setup and configuration instructions
+- **Portfolio Building Guide:** [portfolio-building-guide.md](portfolio-building-guide.md) - Step-by-step portfolio creation tutorial
+- **Components Summary:** [portfolio-components-summary.md](portfolio-components-summary.md) - Technical components overview
+- **Customization Tutorial:** [customization-tutorial.md](customization-tutorial.md) - Personalization guide
+- **Internship Diary:** [staj-defteri.md](staj-defteri.md) - 20-day detailed internship diary
+- **Detailed Internship Diary:** [staj-defteri-detayli.md](staj-defteri-detayli.md) - Comprehensive 20-day internship diary with detailed explanations
 
 ---
 
